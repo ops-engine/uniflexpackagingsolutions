@@ -5,6 +5,13 @@ const path = require("node:path");
 const HOST = process.env.HOST || "0.0.0.0";
 const PORT = Number(process.env.PORT || 3000);
 const PUBLIC_DIR = __dirname;
+const BLOCKED_ROOT_FILES = new Set([
+  ".gitignore",
+  "LICENSE",
+  "README.md",
+  "package.json",
+  "server.js"
+]);
 
 const MIME_TYPES = {
   ".css": "text/css; charset=utf-8",
@@ -28,13 +35,28 @@ function send(response, statusCode, body, contentType = "text/plain; charset=utf
 }
 
 function resolveStaticPath(requestUrl) {
-  const url = new URL(requestUrl, `http://${HOST}:${PORT}`);
-  const decodedPath = decodeURIComponent(url.pathname);
-  const normalizedPath = path.normalize(decodedPath).replace(/^(\.\.(\/|\\|$))+/, "");
-  const requestedPath = normalizedPath === "/" ? "/index.html" : normalizedPath;
-  const filePath = path.join(PUBLIC_DIR, requestedPath);
+  let url;
+  let decodedPath;
 
-  if (!filePath.startsWith(PUBLIC_DIR)) {
+  try {
+    url = new URL(requestUrl, `http://${HOST}:${PORT}`);
+    decodedPath = decodeURIComponent(url.pathname);
+  } catch {
+    return null;
+  }
+
+  const normalizedPath = path.normalize(decodedPath);
+  const requestedPath = normalizedPath === "/" ? "/index.html" : normalizedPath;
+  const rootFile = requestedPath.replace(/^\/+/, "").split(/[\\/]/)[0];
+
+  if (rootFile.startsWith(".") || BLOCKED_ROOT_FILES.has(rootFile)) {
+    return null;
+  }
+
+  const filePath = path.join(PUBLIC_DIR, requestedPath);
+  const relativePath = path.relative(PUBLIC_DIR, filePath);
+
+  if (relativePath.startsWith("..") || path.isAbsolute(relativePath)) {
     return null;
   }
 
