@@ -1,0 +1,12 @@
+{
+  "name": "uniflex-packaging-solutions",
+  "version": "1.0.0",
+  "description": "Static website and server for Uniflex Packaging Solutions.",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
