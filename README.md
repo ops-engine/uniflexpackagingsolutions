@@ -8,7 +8,6 @@ Static website for [Uniflex Packaging Solutions](https://ops-engine.github.io/un
 - `styles.css` - responsive layout and visual design
 - `script.js` - navigation and newsletter interactions
 - `server.js` - dependency-free Node.js static server
-- `CNAME` - future GitHub Pages custom domain configuration
 - `robots.txt` and `sitemap.xml` - search engine metadata
 
 ## Local preview
