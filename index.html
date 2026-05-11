@@ -16,18 +16,33 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ops-engine.github.io/uniflexpackagingsolutions/" />
-    <meta name="theme-color" content="#2563eb" />
-    <link rel="stylesheet" href="styles.css?v=blue-20260511" />
+    <meta name="theme-color" content="#1e3a8a" />
+    <link rel="stylesheet" href="styles.css?v=hero-blue-20260511" />
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="#home" aria-label="Uniflex Packaging Solutions home">
-        <span class="brand-mark">U</span>
-        <span>
-          <strong>Uniflex</strong>
-          <small>Packaging Solutions</small>
+        <span class="brand-mark">
+          <img
+            src="images/brand/uniflex-logo-clean-4k.png"
+            width="3840"
+            height="1207"
+            alt="Uniflex Packaging Solutions"
+            decoding="async"
+            fetchpriority="high"
+          />
         </span>
       </a>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a class="nav-link" href="#home">Home</a>
+        <a class="nav-link nav-link--has-sub" href="#solutions">Solutions</a>
+        <a class="nav-link nav-link--has-sub" href="#pouches">Pouches</a>
+        <a class="nav-link nav-link--has-sub" href="#industries">Industries</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+
+      <a class="header-cta" href="#contact">Enquire now</a>
 
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
         <span class="sr-only">Toggle navigation</span>
@@ -35,13 +50,6 @@
         <span></span>
         <span></span>
       </button>
-
-      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-        <a href="#solutions">Solutions</a>
-        <a href="#pouches">Pouches</a>
-        <a href="#industries">Industries</a>
-        <a href="#contact">Contact</a>
-      </nav>
     </header>
 
     <main id="home">
@@ -73,17 +81,19 @@
           </dl>
         </div>
 
-        <div class="hero-visual" aria-label="Printed flexible pouches illustration">
-          <div class="package package-tall">
-            <span>Stand-up pouch</span>
-          </div>
-          <div class="package package-small">
-            <span>Custom labels</span>
-          </div>
-          <div class="package package-wide">
-            <span>Laminated roll</span>
-          </div>
-        </div>
+        <figure class="hero-visual hero-visual--collage" aria-label="Printed flexible packaging examples">
+          <img
+            class="hero-visual__img"
+            src="images/hero-packaging-collage-4k.png"
+            srcset="images/hero-packaging-collage.png 625w, images/hero-packaging-collage-4k.png 3840w"
+            sizes="(min-width: 980px) 42vw, 100vw"
+            width="3840"
+            height="2304"
+            alt="Printed flexible packaging: stand-up pouch, spout refill pouch, drink mix jar, laminated film rolls, and pillow pouch."
+            decoding="async"
+            fetchpriority="high"
+          />
+        </figure>
       </section>
 
       <section id="solutions" class="section solutions">
@@ -394,11 +404,16 @@
 
     <footer class="site-footer">
       <div>
-        <a class="brand footer-brand" href="#home">
-          <span class="brand-mark">U</span>
-          <span>
-            <strong>Uniflex</strong>
-            <small>Packaging Solutions</small>
+        <a class="brand footer-brand" href="#home" aria-label="Uniflex Packaging Solutions home">
+          <span class="brand-mark">
+            <img
+              src="images/brand/uniflex-logo-clean-4k.png"
+              width="3840"
+              height="1207"
+              alt="Uniflex Packaging Solutions"
+              loading="lazy"
+              decoding="async"
+            />
           </span>
         </a>
         <p>Custom flexible packaging for ambitious brands.</p>
