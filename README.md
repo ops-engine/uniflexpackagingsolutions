@@ -36,3 +36,22 @@ python3 -m http.server 8000
 ```
 
 Then open `http://localhost:8000`.
+
+## GitHub Pages hosting
+
+This repository includes `.github/workflows/pages.yml` to publish the website with
+GitHub Pages whenever changes are pushed to `main`.
+
+The workflow publishes only these public files:
+
+- `index.html`
+- `styles.css`
+- `script.js`
+- `CNAME`
+- `robots.txt`
+- `sitemap.xml`
+
+In the repository settings, set **Pages > Build and deployment > Source** to
+**GitHub Actions**. After the workflow runs successfully, the site will be
+available at `https://uniflexpackagingsolutions.com/` once the domain DNS points
+to GitHub Pages.
