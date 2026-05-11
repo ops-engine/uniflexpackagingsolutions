@@ -17,43 +17,88 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ops-engine.github.io/uniflexpackagingsolutions/" />
     <meta name="theme-color" content="#1e3a8a" />
-    <link rel="stylesheet" href="styles.css?v=hero-blue-20260511" />
+    <link rel="stylesheet" href="styles.css?v=header-tabs-active-20260511" />
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="#home" aria-label="Uniflex Packaging Solutions home">
-        <span class="brand-mark">
-          <img
-            src="images/brand/uniflex-logo-clean-4k.png"
-            width="3840"
-            height="1207"
-            alt="Uniflex Packaging Solutions"
-            decoding="async"
-            fetchpriority="high"
-          />
-        </span>
-      </a>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="header-sticky">
+      <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Uniflex Packaging Solutions home">
+          <span class="brand-mark">
+            <img
+              src="images/brand/uniflex-logo-clean-4k.png"
+              width="3840"
+              height="1207"
+              alt="Uniflex Packaging Solutions"
+              decoding="async"
+              fetchpriority="high"
+            />
+          </span>
+        </a>
 
-      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-        <a class="nav-link" href="#home">Home</a>
-        <a class="nav-link nav-link--has-sub" href="#solutions">Solutions</a>
-        <a class="nav-link nav-link--has-sub" href="#pouches">Pouches</a>
-        <a class="nav-link nav-link--has-sub" href="#industries">Industries</a>
-        <a class="nav-link" href="#contact">Contact</a>
-      </nav>
+        <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+          <a class="nav-link" href="index.html">Home</a>
+          <div class="nav-group">
+            <a class="nav-link nav-link--has-sub" href="about.html">About</a>
+            <div class="nav-panel" role="region" aria-label="About menu">
+              <a href="about.html">Our company</a>
+              <a href="about.html#approach">How we work</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <a class="nav-link nav-link--has-sub" href="pouches/index.html">Flexible pouches</a>
+            <div class="nav-panel nav-panel--wide" role="region" aria-label="Pouch formats">
+              <a href="pouches/three-side-seal.html">3 side seal pouch</a>
+              <a href="pouches/centre-seal.html">Centre seal pouch</a>
+              <a href="pouches/stand-up.html">Stand-up pouch</a>
+              <a href="pouches/shaped-pouch.html">Shaped pouch</a>
+              <a href="pouches/four-side-seal.html">4 side seal pouch</a>
+              <a href="pouches/side-gusset.html">Side gusset pouch</a>
+              <a href="pouches/spout.html">Spout pouch</a>
+              <a href="pouches/retort.html">Retort pouch</a>
+              <a href="pouches/flat-bottom.html">Flat bottom pouch</a>
+              <a href="pouches/index.html">View all formats</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <a class="nav-link nav-link--has-sub" href="index.html#solutions">Solutions</a>
+            <div class="nav-panel" role="region" aria-label="Solutions menu">
+              <a href="index.html#solutions">All solutions</a>
+              <a href="index.html#gravure">Gravure printed pouches</a>
+              <a href="index.html#digital">Digital printed pouches</a>
+              <a href="index.html#specialty">Specialty packaging</a>
+            </div>
+          </div>
+          <div class="nav-group">
+            <a class="nav-link nav-link--has-sub" href="industries.html">Industries</a>
+            <div class="nav-panel nav-panel--wide" role="region" aria-label="Industries menu">
+              <a href="industries.html#processed-food">Processed food</a>
+              <a href="industries.html#tea-coffee">Tea &amp; coffee</a>
+              <a href="industries.html#household">Household &amp; garden</a>
+              <a href="industries.html#pet-food">Pet food</a>
+              <a href="industries.html#liquid-food">Liquid food</a>
+              <a href="industries.html#personal-care">Health &amp; personal care</a>
+              <a href="industries.html#beverages">Beverages</a>
+              <a href="industries.html#medical">Medical &amp; pharmaceuticals</a>
+            </div>
+          </div>
+          <a class="nav-link" href="gallery.html">Gallery</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </nav>
 
-      <a class="header-cta" href="#contact">Enquire now</a>
+        <a class="header-cta" href="contact.html">Enquire now</a>
 
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span class="sr-only">Toggle navigation</span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </header>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="sr-only">Toggle navigation</span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </header>
+    </div>
 
-    <main id="home">
-      <section class="hero section">
+    <main id="main-content">
+      <section id="home" class="hero section">
         <div class="hero-copy">
           <p class="eyebrow">Flexible packaging company</p>
           <h1>Packaging that protects products and elevates brands.</h1>
@@ -62,8 +107,8 @@
             laminated rolls, labels, and custom packaging formats for growing consumer brands.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#contact">Get packaging advice</a>
-            <a class="button button-secondary" href="#pouches">Explore pouch range</a>
+            <a class="button button-primary" href="contact.html">Get packaging advice</a>
+            <a class="button button-secondary" href="pouches/index.html">Explore pouch range</a>
           </div>
           <dl class="hero-stats" aria-label="Company highlights">
             <div>
@@ -79,6 +124,13 @@
               <dd>custom support</dd>
             </div>
           </dl>
+          <div class="clients-strip" aria-label="Example brand categories we support">
+            <span>Food &amp; sweets</span>
+            <span>Personal care</span>
+            <span>Beverages</span>
+            <span>Snacks &amp; FMCG</span>
+            <span>Film &amp; rolls</span>
+          </div>
         </div>
 
         <figure class="hero-visual hero-visual--collage" aria-label="Printed flexible packaging examples">
@@ -107,7 +159,7 @@
         </div>
 
         <div class="solution-grid">
-          <article class="solution-card">
+          <article id="gravure" class="solution-card">
             <div class="icon-circle">G</div>
             <h3>Gravure printed pouches</h3>
             <p>
@@ -119,9 +171,10 @@
               <li>Reliable color consistency for bulk orders</li>
               <li>Ideal for food, personal care, and FMCG packs</li>
             </ul>
+            <a class="card-more" href="contact.html">Know more →</a>
           </article>
 
-          <article class="solution-card featured">
+          <article id="digital" class="solution-card featured">
             <div class="icon-circle">D</div>
             <h3>Digital printed pouches</h3>
             <p>
@@ -133,9 +186,10 @@
               <li>Low-MOQ friendly for growing brands</li>
               <li>Quick design changes and faster turnaround</li>
             </ul>
+            <a class="card-more" href="contact.html">Know more →</a>
           </article>
 
-          <article class="solution-card">
+          <article id="specialty" class="solution-card">
             <div class="icon-circle">S</div>
             <h3>Security and specialty packaging</h3>
             <p>
@@ -147,6 +201,7 @@
               <li>Gloss, matte, metallic, and transparent finishes</li>
               <li>Packaging structures matched to product needs</li>
             </ul>
+            <a class="card-more" href="contact.html">Know more →</a>
           </article>
         </div>
       </section>
@@ -158,50 +213,69 @@
           <p>
             We support a broad selection of pouch styles with custom sizes, material
             structures, barrier properties, and finishing options.
+            <a class="text-link-bold" href="pouches/index.html">Browse all pouch pages →</a>
           </p>
         </div>
 
         <div class="pouch-grid">
-          <article>
-            <span class="pouch-shape three-side"></span>
-            <h3>3 Side Seal Pouch</h3>
-          </article>
-          <article>
-            <span class="pouch-shape center-seal"></span>
-            <h3>Centre Seal Pouch</h3>
-          </article>
-          <article>
-            <span class="pouch-shape stand-up"></span>
-            <h3>Stand-Up Pouch</h3>
-          </article>
-          <article>
-            <span class="pouch-shape shaped"></span>
-            <h3>Shaped Pouch</h3>
-          </article>
-          <article>
-            <span class="pouch-shape four-side"></span>
-            <h3>4 Side Seal Pouch</h3>
-          </article>
-          <article>
-            <span class="pouch-shape gusset"></span>
-            <h3>Side Gusset Pouch</h3>
-          </article>
-          <article>
-            <span class="pouch-shape spout"></span>
-            <h3>Spout Pouch</h3>
-          </article>
-          <article>
-            <span class="pouch-shape retort"></span>
-            <h3>Retort Pouch</h3>
-          </article>
-          <article>
-            <span class="pouch-shape flat-bottom"></span>
-            <h3>Flat Bottom Pouch</h3>
-          </article>
+          <a class="pouch-card" href="pouches/three-side-seal.html">
+            <article>
+              <span class="pouch-shape three-side"></span>
+              <h3>3 Side Seal Pouch</h3>
+            </article>
+          </a>
+          <a class="pouch-card" href="pouches/centre-seal.html">
+            <article>
+              <span class="pouch-shape center-seal"></span>
+              <h3>Centre Seal Pouch</h3>
+            </article>
+          </a>
+          <a class="pouch-card" href="pouches/stand-up.html">
+            <article>
+              <span class="pouch-shape stand-up"></span>
+              <h3>Stand-Up Pouch</h3>
+            </article>
+          </a>
+          <a class="pouch-card" href="pouches/shaped-pouch.html">
+            <article>
+              <span class="pouch-shape shaped"></span>
+              <h3>Shaped Pouch</h3>
+            </article>
+          </a>
+          <a class="pouch-card" href="pouches/four-side-seal.html">
+            <article>
+              <span class="pouch-shape four-side"></span>
+              <h3>4 Side Seal Pouch</h3>
+            </article>
+          </a>
+          <a class="pouch-card" href="pouches/side-gusset.html">
+            <article>
+              <span class="pouch-shape gusset"></span>
+              <h3>Side Gusset Pouch</h3>
+            </article>
+          </a>
+          <a class="pouch-card" href="pouches/spout.html">
+            <article>
+              <span class="pouch-shape spout"></span>
+              <h3>Spout Pouch</h3>
+            </article>
+          </a>
+          <a class="pouch-card" href="pouches/retort.html">
+            <article>
+              <span class="pouch-shape retort"></span>
+              <h3>Retort Pouch</h3>
+            </article>
+          </a>
+          <a class="pouch-card" href="pouches/flat-bottom.html">
+            <article>
+              <span class="pouch-shape flat-bottom"></span>
+              <h3>Flat Bottom Pouch</h3>
+            </article>
+          </a>
         </div>
       </section>
 
-      <section class="section custom-printing">
+      <section id="custom-printing" class="section custom-printing">
         <div>
           <p class="eyebrow">Custom printing</p>
           <h2>Packaging built around your brand artwork and product performance</h2>
@@ -342,15 +416,47 @@
         </div>
 
         <div class="industry-grid">
-          <span>Processed Food</span>
-          <span>Tea & Coffee</span>
-          <span>Household & Garden</span>
-          <span>Pet Food</span>
-          <span>Liquid Food</span>
-          <span>Health & Personal Care</span>
-          <span>Beverages</span>
-          <span>Medical & Pharmaceuticals</span>
+          <a href="industries.html#processed-food"><span>Processed Food</span></a>
+          <a href="industries.html#tea-coffee"><span>Tea &amp; Coffee</span></a>
+          <a href="industries.html#household"><span>Household &amp; Garden</span></a>
+          <a href="industries.html#pet-food"><span>Pet Food</span></a>
+          <a href="industries.html#liquid-food"><span>Liquid Food</span></a>
+          <a href="industries.html#personal-care"><span>Health &amp; Personal Care</span></a>
+          <a href="industries.html#beverages"><span>Beverages</span></a>
+          <a href="industries.html#medical"><span>Medical &amp; Pharmaceuticals</span></a>
         </div>
+      </section>
+
+      <section class="section gallery-section" aria-labelledby="gallery-heading">
+        <div class="section-heading">
+          <p class="eyebrow">Gallery</p>
+          <h2 id="gallery-heading">Explore formats &amp; applications</h2>
+          <p>
+            We keep this gallery text-based so we only showcase photography you approve. Open a format
+            for detail, or ask us for project-specific shots and physical samples.
+          </p>
+        </div>
+        <div class="gallery-teasers">
+          <a class="gallery-teaser" href="pouches/stand-up.html">
+            <strong>Stand-up &amp; spout</strong>
+            <span>Shelf-ready pouches for liquids and dry goods.</span>
+          </a>
+          <a class="gallery-teaser" href="pouches/flat-bottom.html">
+            <strong>Flat bottom</strong>
+            <span>Premium block-bottom presentation.</span>
+          </a>
+          <a class="gallery-teaser" href="pouches/retort.html">
+            <strong>Retort</strong>
+            <span>Thermal processing–friendly structures.</span>
+          </a>
+          <a class="gallery-teaser" href="industries.html">
+            <strong>Industries</strong>
+            <span>How we align films to your category.</span>
+          </a>
+        </div>
+        <p style="margin-top: 22px">
+          <a class="text-link-bold" href="gallery.html">Gallery hub &amp; full list →</a>
+        </p>
       </section>
 
       <section class="section testimonials">
@@ -402,9 +508,9 @@
       </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer site-footer--columns">
       <div>
-        <a class="brand footer-brand" href="#home" aria-label="Uniflex Packaging Solutions home">
+        <a class="brand footer-brand" href="index.html" aria-label="Uniflex Packaging Solutions home">
           <span class="brand-mark">
             <img
               src="images/brand/uniflex-logo-clean-4k.png"
@@ -416,19 +522,37 @@
             />
           </span>
         </a>
-        <p>Custom flexible packaging for ambitious brands.</p>
+        <p>Custom flexible packaging for ambitious brands — from pouches and rolls to labels and specialty finishes.</p>
       </div>
-
-      <div class="footer-links">
-        <a href="#solutions">Solutions</a>
-        <a href="#pouches">Pouches</a>
-        <a href="#industries">Industries</a>
-        <a href="#contact">Contact</a>
+      <div class="footer-col">
+        <h3>Flexible pouches</h3>
+        <ul>
+          <li><a href="pouches/stand-up.html">Stand-up pouch</a></li>
+          <li><a href="pouches/spout.html">Spout pouch</a></li>
+          <li><a href="pouches/flat-bottom.html">Flat bottom pouch</a></li>
+          <li><a href="pouches/index.html">All formats</a></li>
+        </ul>
       </div>
-
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="privacy.html">Privacy policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="contact.html">Enquire now</a></li>
+          <li><a href="tel:+910000000000">+91 00000 00000</a></li>
+          <li><a href="mailto:info@uniflexpackagingsolutions.com">Email us</a></li>
+        </ul>
+      </div>
       <p class="copyright">&copy; <span id="year"></span> Uniflex Packaging Solutions. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=header-tabs-active-20260511"></script>
   </body>
 </html>

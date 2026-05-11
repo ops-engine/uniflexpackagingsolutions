@@ -13,6 +13,8 @@ const BLOCKED_ROOT_FILES = new Set([
   "server.js"
 ]);
 
+const BLOCKED_ROOT_DIRS = new Set(["scripts", ".git"]);
+
 const MIME_TYPES = {
   ".css": "text/css; charset=utf-8",
   ".html": "text/html; charset=utf-8",
@@ -49,7 +51,7 @@ function resolveStaticPath(requestUrl) {
   const requestedPath = normalizedPath === "/" ? "/index.html" : normalizedPath;
   const rootFile = requestedPath.replace(/^\/+/, "").split(/[\\/]/)[0];
 
-  if (rootFile.startsWith(".") || BLOCKED_ROOT_FILES.has(rootFile)) {
+  if (rootFile.startsWith(".") || BLOCKED_ROOT_FILES.has(rootFile) || BLOCKED_ROOT_DIRS.has(rootFile)) {
     return null;
   }
 
