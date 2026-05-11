@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://uniflexpackagingsolutions.com/sitemap.xml
+Sitemap: https://ops-engine.github.io/uniflexpackagingsolutions/sitemap.xml

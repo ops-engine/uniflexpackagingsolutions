@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - cursor/build-uniflex-website-4b8c
   workflow_dispatch:
 
 permissions:
@@ -31,7 +32,8 @@ jobs:
       - name: Prepare static site
         run: |
           mkdir -p _site
-          cp index.html styles.css script.js CNAME robots.txt sitemap.xml _site/
+          cp index.html styles.css script.js robots.txt sitemap.xml _site/
+          touch _site/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

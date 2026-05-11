@@ -1,6 +1,6 @@
 # Uniflex Packaging Solutions
 
-Static website for [uniflexpackagingsolutions.com](https://uniflexpackagingsolutions.com/).
+Static website for [Uniflex Packaging Solutions](https://ops-engine.github.io/uniflexpackagingsolutions/).
 
 ## Files
 
@@ -8,7 +8,7 @@ Static website for [uniflexpackagingsolutions.com](https://uniflexpackagingsolut
 - `styles.css` - responsive layout and visual design
 - `script.js` - navigation and newsletter interactions
 - `server.js` - dependency-free Node.js static server
-- `CNAME` - GitHub Pages custom domain
+- `CNAME` - future GitHub Pages custom domain configuration
 - `robots.txt` and `sitemap.xml` - search engine metadata
 
 ## Local preview
@@ -40,18 +40,21 @@ Then open `http://localhost:8000`.
 ## GitHub Pages hosting
 
 This repository includes `.github/workflows/pages.yml` to publish the website with
-GitHub Pages whenever changes are pushed to `main`.
+GitHub Pages whenever changes are pushed to `main`. The current feature branch
+also deploys while the temporary GitHub Pages domain is in use.
 
 The workflow publishes only these public files:
 
 - `index.html`
 - `styles.css`
 - `script.js`
-- `CNAME`
 - `robots.txt`
 - `sitemap.xml`
+- `.nojekyll`
 
 In the repository settings, set **Pages > Build and deployment > Source** to
 **GitHub Actions**. After the workflow runs successfully, the site will be
-available at `https://uniflexpackagingsolutions.com/` once the domain DNS points
-to GitHub Pages.
+available at `https://ops-engine.github.io/uniflexpackagingsolutions/`.
+
+To switch to the custom domain later, publish `CNAME` in the Pages artifact and
+point DNS for `uniflexpackagingsolutions.com` to GitHub Pages.
