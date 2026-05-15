@@ -18,6 +18,7 @@
     <meta property="og:url" content="https://ops-engine.github.io/uniflexpackagingsolutions/" />
     <meta name="theme-color" content="#1e3a8a" />
     <link rel="stylesheet" href="styles.css?v=header-tabs-active-20260511" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -43,6 +44,19 @@
             <div class="nav-panel" role="region" aria-label="About menu">
               <a href="about.html">Our company</a>
               <a href="about.html#approach">How we work</a>
+              <div class="nav-subgroup" role="group" aria-label="Industries links">
+                <a class="nav-subgroup__trigger" href="industries.html">Industries</a>
+                <div class="nav-subgroup__panel">
+                  <a href="industries.html#processed-food"><i class="ri-restaurant-2-line nav-industry-icon" aria-hidden="true"></i><span>Processed food</span></a>
+                  <a href="industries.html#tea-coffee"><i class="ri-cup-line nav-industry-icon" aria-hidden="true"></i><span>Tea &amp; coffee</span></a>
+                  <a href="industries.html#household"><i class="ri-home-gear-line nav-industry-icon" aria-hidden="true"></i><span>Household &amp; garden</span></a>
+                  <a href="industries.html#pet-food"><i class="ri-footprint-line nav-industry-icon" aria-hidden="true"></i><span>Pet food</span></a>
+                  <a href="industries.html#liquid-food"><i class="ri-goblet-line nav-industry-icon" aria-hidden="true"></i><span>Liquid food</span></a>
+                  <a href="industries.html#personal-care"><i class="ri-hand-sanitizer-line nav-industry-icon" aria-hidden="true"></i><span>Health &amp; personal care</span></a>
+                  <a href="industries.html#beverages"><i class="ri-cup-line nav-industry-icon" aria-hidden="true"></i><span>Beverages</span></a>
+                  <a href="industries.html#medical"><i class="ri-medicine-bottle-line nav-industry-icon" aria-hidden="true"></i><span>Medical &amp; pharmaceuticals</span></a>
+                </div>
+              </div>
             </div>
           </div>
           <div class="nav-group">
@@ -69,19 +83,6 @@
               <a href="index.html#specialty">Specialty packaging</a>
             </div>
           </div>
-          <div class="nav-group">
-            <a class="nav-link nav-link--has-sub" href="industries.html">Industries</a>
-            <div class="nav-panel nav-panel--wide" role="region" aria-label="Industries menu">
-              <a href="industries.html#processed-food">Processed food</a>
-              <a href="industries.html#tea-coffee">Tea &amp; coffee</a>
-              <a href="industries.html#household">Household &amp; garden</a>
-              <a href="industries.html#pet-food">Pet food</a>
-              <a href="industries.html#liquid-food">Liquid food</a>
-              <a href="industries.html#personal-care">Health &amp; personal care</a>
-              <a href="industries.html#beverages">Beverages</a>
-              <a href="industries.html#medical">Medical &amp; pharmaceuticals</a>
-            </div>
-          </div>
           <a class="nav-link" href="gallery.html">Gallery</a>
           <a class="nav-link" href="contact.html">Contact</a>
         </nav>
@@ -98,6 +99,31 @@
     </div>
 
     <main id="main-content">
+      <section class="top-slider section" aria-label="Featured packaging gallery">
+        <div class="top-slider__frame" data-slider>
+          <div class="top-slider__track" data-slider-track>
+            <figure class="top-slider__slide is-active">
+              <img src="images/home-slider/slide-1.png" width="3840" height="2160" alt="Authenticated snack packaging for commercial scale production" loading="eager" decoding="async" />
+            </figure>
+            <figure class="top-slider__slide">
+              <img src="images/home-slider/slide-2.png" width="3840" height="2160" alt="Organic pouch packaging with secure authenticity seals" loading="lazy" decoding="async" />
+            </figure>
+            <figure class="top-slider__slide">
+              <img src="images/home-slider/slide-3.png" width="3840" height="2160" alt="Coffee and grain pouch range with premium seal presentation" loading="lazy" decoding="async" />
+            </figure>
+            <figure class="top-slider__slide">
+              <img src="images/home-slider/slide-4.jpg" width="1024" height="571" alt="Precision roast sealed promise pouch showcase" loading="lazy" decoding="async" />
+            </figure>
+          </div>
+          <div class="top-slider__dots" aria-label="Slide selection">
+            <button class="top-slider__dot is-active" type="button" aria-label="Go to slide 1" data-slider-dot="0"></button>
+            <button class="top-slider__dot" type="button" aria-label="Go to slide 2" data-slider-dot="1"></button>
+            <button class="top-slider__dot" type="button" aria-label="Go to slide 3" data-slider-dot="2"></button>
+            <button class="top-slider__dot" type="button" aria-label="Go to slide 4" data-slider-dot="3"></button>
+          </div>
+        </div>
+      </section>
+
       <section id="home" class="hero section">
         <div class="hero-copy">
           <p class="eyebrow">Flexible packaging company</p>
@@ -416,14 +442,14 @@
         </div>
 
         <div class="industry-grid">
-          <a href="industries.html#processed-food"><span>Processed Food</span></a>
-          <a href="industries.html#tea-coffee"><span>Tea &amp; Coffee</span></a>
-          <a href="industries.html#household"><span>Household &amp; Garden</span></a>
-          <a href="industries.html#pet-food"><span>Pet Food</span></a>
-          <a href="industries.html#liquid-food"><span>Liquid Food</span></a>
-          <a href="industries.html#personal-care"><span>Health &amp; Personal Care</span></a>
-          <a href="industries.html#beverages"><span>Beverages</span></a>
-          <a href="industries.html#medical"><span>Medical &amp; Pharmaceuticals</span></a>
+          <a href="industries.html#processed-food"><span><i class="ri-restaurant-2-line industry-grid__icon-font" aria-hidden="true"></i><span class="industry-grid__label">Processed Food</span></span></a>
+          <a href="industries.html#tea-coffee"><span><i class="ri-cup-line industry-grid__icon-font" aria-hidden="true"></i><span class="industry-grid__label">Tea &amp; Coffee</span></span></a>
+          <a href="industries.html#household"><span><i class="ri-home-gear-line industry-grid__icon-font" aria-hidden="true"></i><span class="industry-grid__label">Household &amp; Garden</span></span></a>
+          <a href="industries.html#pet-food"><span><i class="ri-footprint-line industry-grid__icon-font" aria-hidden="true"></i><span class="industry-grid__label">Pet Food</span></span></a>
+          <a href="industries.html#liquid-food"><span><i class="ri-goblet-line industry-grid__icon-font" aria-hidden="true"></i><span class="industry-grid__label">Liquid Food</span></span></a>
+          <a href="industries.html#personal-care"><span><i class="ri-hand-sanitizer-line industry-grid__icon-font" aria-hidden="true"></i><span class="industry-grid__label">Health &amp; Personal Care</span></span></a>
+          <a href="industries.html#beverages"><span><i class="ri-cup-line industry-grid__icon-font" aria-hidden="true"></i><span class="industry-grid__label">Beverages</span></span></a>
+          <a href="industries.html#medical"><span><i class="ri-medicine-bottle-line industry-grid__icon-font" aria-hidden="true"></i><span class="industry-grid__label">Medical &amp; Pharmaceuticals</span></span></a>
         </div>
       </section>
 
@@ -538,7 +564,7 @@
         <ul>
           <li><a href="about.html">About us</a></li>
           <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="industries.html">Industries</a></li>
+          <li><a href="industries.html"><i class="ri-apps-2-line nav-industry-icon" aria-hidden="true"></i><span>Industries</span></a></li>
           <li><a href="privacy.html">Privacy policy</a></li>
         </ul>
       </div>
