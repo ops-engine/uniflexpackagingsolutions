@@ -2900,12 +2900,6 @@ a.gallery-teaser:focus-visible {
   overflow: visible;
 }
 
-.contact-float__dock {
-  position: relative;
-  z-index: 3;
-  display: inline-flex;
-}
-
 .contact-float.is-positioned {
   bottom: auto;
 }
@@ -2918,8 +2912,8 @@ a.gallery-teaser:focus-visible {
   transition: none;
 }
 
-.contact-float__launcher,
-.contact-float__restore {
+.contact-float__launcher {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 56px;
@@ -2931,76 +2925,24 @@ a.gallery-teaser:focus-visible {
   background: var(--primary);
   color: #fff;
   cursor: pointer;
+  touch-action: none;
   box-shadow: 0 12px 28px rgba(15, 23, 42, 0.22);
   transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
 }
 
-.contact-float__launcher {
-  display: inline-flex;
-  touch-action: none;
-}
-
-.contact-float__launcher i,
-.contact-float__restore i {
+.contact-float__launcher i {
   font-size: 1.65rem;
   line-height: 1;
 }
 
 .contact-float__launcher:hover,
-.contact-float__launcher:focus-visible,
-.contact-float__restore:hover,
-.contact-float__restore:focus-visible {
+.contact-float__launcher:focus-visible {
   transform: translateY(-1px);
   box-shadow: 0 16px 32px rgba(15, 23, 42, 0.28);
 }
 
 .contact-float.is-open .contact-float__launcher {
   background: var(--primary-dark);
-}
-
-.contact-float__hide-widget {
-  position: absolute;
-  top: -6px;
-  left: -6px;
-  z-index: 5;
-  pointer-events: auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background: #fff;
-  color: #475569;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
-  cursor: pointer;
-  transition: transform 140ms ease, color 140ms ease;
-}
-
-.contact-float__hide-widget i {
-  font-size: 0.95rem;
-  line-height: 1;
-}
-
-.contact-float__hide-widget:hover,
-.contact-float__hide-widget:focus-visible {
-  color: #0f172a;
-  transform: scale(1.05);
-}
-
-.contact-float__restore {
-  display: none;
-}
-
-.contact-float.is-widget-hidden .contact-float__dock,
-.contact-float.is-widget-hidden .contact-float__panel {
-  display: none !important;
-}
-
-.contact-float.is-widget-hidden .contact-float__restore {
-  display: inline-flex !important;
 }
 
 .contact-float__panel {
@@ -3036,26 +2978,6 @@ a.gallery-teaser:focus-visible {
 .contact-float__actions {
   display: grid;
   gap: 10px;
-}
-
-.contact-float__hide-panel {
-  width: 100%;
-  margin-top: 4px;
-  padding: 8px 10px;
-  border: 0;
-  border-radius: 10px;
-  background: rgba(15, 23, 42, 0.06);
-  color: #475569;
-  font-size: 0.78rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background 140ms ease, color 140ms ease;
-}
-
-.contact-float__hide-panel:hover,
-.contact-float__hide-panel:focus-visible {
-  background: rgba(15, 23, 42, 0.1);
-  color: #0f172a;
 }
 
 .contact-float__collapse {
@@ -3208,15 +3130,13 @@ a.gallery-teaser:focus-visible {
     bottom: 10px;
   }
 
-  .contact-float__launcher,
-  .contact-float__restore {
+  .contact-float__launcher {
     width: 52px;
     height: 52px;
     min-height: 52px;
   }
 
-  .contact-float__launcher i,
-  .contact-float__restore i {
+  .contact-float__launcher i {
     font-size: 1.5rem;
   }
 

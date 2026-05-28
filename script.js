@@ -387,15 +387,11 @@ const floatingContacts = [
   if (window.__uniflexContactFloatReady) return;
 
   const storageKey = "uniflex-contact-float-pos";
-  const hiddenStorageKey = "uniflex-contact-float-hidden";
   const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
   const contactFloat = document.createElement("div");
   contactFloat.className = "contact-float";
   contactFloat.setAttribute("aria-label", "Quick contact widget");
-
-  const dock = document.createElement("div");
-  dock.className = "contact-float__dock";
 
   const launcher = document.createElement("button");
   launcher.type = "button";
@@ -404,18 +400,6 @@ const floatingContacts = [
   launcher.setAttribute("aria-controls", "contact-float-panel");
   launcher.setAttribute("aria-label", "Open contact options");
   launcher.innerHTML = '<i class="ri-customer-service-2-line" aria-hidden="true"></i>';
-
-  const hideWidget = document.createElement("button");
-  hideWidget.type = "button";
-  hideWidget.className = "contact-float__hide-widget";
-  hideWidget.setAttribute("aria-label", "Hide contact widget");
-  hideWidget.innerHTML = '<i class="ri-subtract-line" aria-hidden="true"></i>';
-
-  const restoreBtn = document.createElement("button");
-  restoreBtn.type = "button";
-  restoreBtn.className = "contact-float__restore";
-  restoreBtn.setAttribute("aria-label", "Show contact widget");
-  restoreBtn.innerHTML = '<i class="ri-customer-service-2-line" aria-hidden="true"></i>';
 
   const panel = document.createElement("div");
   panel.id = "contact-float-panel";
@@ -430,11 +414,6 @@ const floatingContacts = [
 
   const actionWrap = document.createElement("div");
   actionWrap.className = "contact-float__actions";
-
-  const hidePanelBtn = document.createElement("button");
-  hidePanelBtn.type = "button";
-  hidePanelBtn.className = "contact-float__hide-panel";
-  hidePanelBtn.textContent = "Hide widget";
 
   floatingContacts.forEach((item) => {
     const link = document.createElement("a");
@@ -454,9 +433,8 @@ const floatingContacts = [
     actionWrap.append(link);
   });
 
-  dock.append(launcher, hideWidget);
-  panel.append(collapse, actionWrap, hidePanelBtn);
-  contactFloat.append(panel, dock, restoreBtn);
+  panel.append(collapse, actionWrap);
+  contactFloat.append(panel, launcher);
   document.body.append(contactFloat);
 
   const drag = {
@@ -497,25 +475,6 @@ const floatingContacts = [
     contactFloat.classList.toggle("is-open", expanded);
   };
 
-  const setWidgetHidden = (hidden) => {
-    if (hidden) {
-      contactFloat.classList.add("is-widget-hidden");
-      setExpanded(false);
-      if (drag.active) endDrag();
-    } else {
-      contactFloat.classList.remove("is-widget-hidden");
-    }
-    try {
-      localStorage.setItem(hiddenStorageKey, hidden ? "1" : "0");
-    } catch (_error) {
-      // ignore localStorage failures
-    }
-  };
-
-  const hideContactWidget = () => {
-    setWidgetHidden(true);
-  };
-
   const ensureVerticalAnchor = () => {
     if (contactFloat.classList.contains("is-positioned")) return;
     applyVerticalPosition(contactFloat.getBoundingClientRect().top);
@@ -553,7 +512,6 @@ const floatingContacts = [
   };
 
   const startDrag = (event) => {
-    if (contactFloat.classList.contains("is-widget-hidden")) return;
     if (event.pointerType === "mouse" && event.button !== 0) return;
 
     ensureVerticalAnchor();
@@ -583,16 +541,6 @@ const floatingContacts = [
     }
   };
 
-  const initHidden = () => {
-    try {
-      if (localStorage.getItem(hiddenStorageKey) === "1") {
-        setWidgetHidden(true);
-      }
-    } catch (_error) {
-      // ignore localStorage failures
-    }
-  };
-
   launcher.addEventListener("pointerdown", (event) => {
     startDrag(event);
   });
@@ -605,34 +553,6 @@ const floatingContacts = [
     event.stopPropagation();
     const next = launcher.getAttribute("aria-expanded") !== "true";
     setExpanded(next);
-  });
-
-  hideWidget.addEventListener("pointerdown", (event) => {
-    event.stopPropagation();
-  });
-
-  hideWidget.addEventListener("pointerup", (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    hideContactWidget();
-  });
-
-  hideWidget.addEventListener("click", (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    hideContactWidget();
-  });
-
-  hidePanelBtn.addEventListener("click", (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    hideContactWidget();
-  });
-
-  restoreBtn.addEventListener("click", (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    setWidgetHidden(false);
   });
 
   collapse.addEventListener("click", (event) => {
@@ -657,10 +577,13 @@ const floatingContacts = [
     applyVerticalPosition(contactFloat.getBoundingClientRect().top);
   });
 
-  requestAnimationFrame(() => {
-    initPosition();
-    initHidden();
-  });
+  requestAnimationFrame(initPosition);
+
+  try {
+    localStorage.removeItem("uniflex-contact-float-hidden");
+  } catch (_error) {
+    // ignore localStorage failures
+  }
 
   window.__uniflexContactFloatReady = true;
 })();
