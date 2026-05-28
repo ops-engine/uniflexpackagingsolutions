@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { SITE_URL } from "./site-config.mjs";
+import { hologramFooterColumn } from "./footer-data.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
@@ -314,12 +315,13 @@ ${applicationList}
           <li><a href="../pouches/index.html">All formats</a></li>
         </ul>
       </div>
+${hologramFooterColumn("../")}
       <div class="footer-col">
         <h3>Company</h3>
         <ul>
           <li><a href="../about.html">About us</a></li>
           <li><a href="../gallery.html">Gallery</a></li>
-          <li><a href="../industries.html"><i class="ri-apps-2-line nav-industry-icon" aria-hidden="true"></i><span>Industries</span></a></li>
+          <li><a href="../industries.html">Industries</a></li>
           <li><a href="../privacy.html">Privacy policy</a></li>
         </ul>
       </div>

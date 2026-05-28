@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - cursor/build-uniflex-website-4b8c
   workflow_dispatch:
 
 permissions:

@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "start": "node server.js",
+    "patch:footer": "node scripts/patch-footer.mjs",
     "generate:sitemap": "node scripts/generate-sitemap.mjs",
     "generate:pages": "node scripts/generate-static-pages.mjs && node scripts/generate-pouch-pages.mjs && node scripts/generate-hologram-pages.mjs && node scripts/generate-sitemap.mjs"
   },
