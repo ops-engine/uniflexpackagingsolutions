@@ -9,6 +9,7 @@
     <meta name="theme-color" content="#1e3a8a" />
     <link rel="stylesheet" href="styles.css?v=header-tabs-active-20260511" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -57,12 +58,19 @@
             </div>
           </div>
           <div class="nav-group">
-            <a class="nav-link nav-link--has-sub" href="index.html#solutions">Solutions</a>
-            <div class="nav-panel" role="region" aria-label="Solutions menu">
-              <a href="index.html#solutions">All solutions</a>
-              <a href="index.html#gravure">Gravure printed pouches</a>
-              <a href="index.html#digital">Digital printed pouches</a>
-              <a href="index.html#specialty">Specialty packaging</a>
+            <a class="nav-link nav-link--has-sub" href="hologram-sticker.html">Hologram Security Stickers</a>
+            <div class="nav-panel nav-panel--wide" role="region" aria-label="Hologram sticker formats">
+              <a href="hologram/hologram-hot-stamping-foil.html">Hologram Hot Stamping Foil</a>
+              <a href="hologram/qr-code-hologram-stickers.html">QR Code Hologram Stickers</a>
+              <a href="hologram/customized-text-hologram.html">Customized Text Hologram</a>
+              <a href="hologram/laser-numbered-holograms.html">Laser Numbered Holograms</a>
+              <a href="hologram/holographic-pouches.html">Holographic Pouches</a>
+              <a href="hologram/hologram-paper-label.html">Holographic Paper Labels</a>
+              <a href="hologram/holographic-security-tapes.html">Holographic Security Tapes</a>
+              <a href="hologram/hologram-shrink-sleeves.html">Hologram Shrink Sleeves</a>
+              <a href="hologram/hologram-coupons.html">Hologram Coupons</a>
+              <a href="hologram/id-overlay-holograms.html">ID Overlay Holograms</a>
+              <a href="hologram/generic-hologram-stickers.html">Generic Hologram Stickers</a>
             </div>
           </div>
           <a class="nav-link" href="gallery.html">Gallery</a>
@@ -83,43 +91,43 @@
         <p class="hero-text">Flexible packaging solutions aligned to category regulations, shelf life, and consumer expectations.</p>
       </div>
       <div class="layout-page prose">
-        <section id="processed-food" class="industry-detail" style="margin-bottom:3rem">
-          <h2><i class="ri-restaurant-2-line industry-detail__icon" aria-hidden="true"></i><span>Processed food</span></h2>
+        <section id="processed-food" style="margin-bottom:3rem">
+          <h2>Processed food</h2>
           <p>Barrier films for spices, snacks, mixes, and ready meals—with finishes that survive retail handling.</p>
           <p><a class="text-link-bold" href="contact.html">Discuss your project →</a></p>
         </section>
-        <section id="tea-coffee" class="industry-detail" style="margin-bottom:3rem">
-          <h2><i class="ri-cup-line industry-detail__icon" aria-hidden="true"></i><span>Tea & coffee</span></h2>
+        <section id="tea-coffee" style="margin-bottom:3rem">
+          <h2>Tea & coffee</h2>
           <p>Aroma retention, degassing valves, and premium matte or gloss looks for specialty coffee and tea.</p>
           <p><a class="text-link-bold" href="contact.html">Discuss your project →</a></p>
         </section>
-        <section id="household" class="industry-detail" style="margin-bottom:3rem">
-          <h2><i class="ri-home-gear-line industry-detail__icon" aria-hidden="true"></i><span>Household & garden</span></h2>
+        <section id="household" style="margin-bottom:3rem">
+          <h2>Household & garden</h2>
           <p>Chemical resistance and robust seals for detergents, cleaners, and garden care liquids.</p>
           <p><a class="text-link-bold" href="contact.html">Discuss your project →</a></p>
         </section>
-        <section id="pet-food" class="industry-detail" style="margin-bottom:3rem">
-          <h2><i class="ri-footprint-line industry-detail__icon" aria-hidden="true"></i><span>Pet food</span></h2>
+        <section id="pet-food" style="margin-bottom:3rem">
+          <h2>Pet food</h2>
           <p>High-barrier structures for dry kibble, treats, and gravies with convenient consumer formats.</p>
           <p><a class="text-link-bold" href="contact.html">Discuss your project →</a></p>
         </section>
-        <section id="liquid-food" class="industry-detail" style="margin-bottom:3rem">
-          <h2><i class="ri-goblet-line industry-detail__icon" aria-hidden="true"></i><span>Liquid food</span></h2>
+        <section id="liquid-food" style="margin-bottom:3rem">
+          <h2>Liquid food</h2>
           <p>Fitments and seal integrity for sauces, dairy alternatives, and pourable products.</p>
           <p><a class="text-link-bold" href="contact.html">Discuss your project →</a></p>
         </section>
-        <section id="personal-care" class="industry-detail" style="margin-bottom:3rem">
-          <h2><i class="ri-hand-sanitizer-line industry-detail__icon" aria-hidden="true"></i><span>Health & personal care</span></h2>
+        <section id="personal-care" style="margin-bottom:3rem">
+          <h2>Health & personal care</h2>
           <p>Soft-touch finishes, transparent windows, and compatibility with creams and gels.</p>
           <p><a class="text-link-bold" href="contact.html">Discuss your project →</a></p>
         </section>
-        <section id="beverages" class="industry-detail" style="margin-bottom:3rem">
-          <h2><i class="ri-cup-line industry-detail__icon" aria-hidden="true"></i><span>Beverages</span></h2>
+        <section id="beverages" style="margin-bottom:3rem">
+          <h2>Beverages</h2>
           <p>Pouches and rolls tuned for filling lines, pasteurisation routes, and shelf clarity.</p>
           <p><a class="text-link-bold" href="contact.html">Discuss your project →</a></p>
         </section>
-        <section id="medical" class="industry-detail" style="margin-bottom:3rem">
-          <h2><i class="ri-medicine-bottle-line industry-detail__icon" aria-hidden="true"></i><span>Medical & pharmaceuticals</span></h2>
+        <section id="medical" style="margin-bottom:3rem">
+          <h2>Medical & pharmaceuticals</h2>
           <p>Controlled documentation mindset, hygiene-aware materials guidance, and stable supply paths.</p>
           <p><a class="text-link-bold" href="contact.html">Discuss your project →</a></p>
         </section>
@@ -138,8 +146,14 @@
       <div class="footer-col">
         <h3>Flexible pouches</h3>
         <ul>
+          <li><a href="pouches/three-side-seal.html">3 side seal pouch</a></li>
+          <li><a href="pouches/centre-seal.html">Centre seal pouch</a></li>
           <li><a href="pouches/stand-up.html">Stand-up pouch</a></li>
+          <li><a href="pouches/shaped-pouch.html">Shaped pouch</a></li>
+          <li><a href="pouches/four-side-seal.html">4 side seal pouch</a></li>
+          <li><a href="pouches/side-gusset.html">Side gusset pouch</a></li>
           <li><a href="pouches/spout.html">Spout pouch</a></li>
+          <li><a href="pouches/retort.html">Retort pouch</a></li>
           <li><a href="pouches/flat-bottom.html">Flat bottom pouch</a></li>
           <li><a href="pouches/index.html">All formats</a></li>
         </ul>
@@ -157,12 +171,30 @@
         <h3>Contact</h3>
         <ul>
           <li><a href="contact.html">Enquire now</a></li>
-          <li><a href="tel:+910000000000">+91 00000 00000</a></li>
-          <li><a href="mailto:info@uniflexpackagingsolutions.com">Email us</a></li>
+          <li><a href="tel:+919686960545">+91 96869 60545</a></li>
+          <li><a href="mailto:contact-us@uniflexpackagingsolutions.com">contact-us@uniflexpackagingsolutions.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Address</h3>
+        <ul>
+          <li>
+            <a class="location-link" href="https://maps.app.goo.gl/bsWXXG1VSUHhUwGw6" target="_blank" rel="noopener noreferrer">
+              <i class="ri-map-pin-2-fill" aria-hidden="true"></i>
+              <span>Survey No. 352, Ground Floor, Ramakuppam Main Road, Kyasamballi Village, KGF Taluk, Kolar, Karnataka 563121</span>
+            </a>
+          </li>
+          <li>
+            <a class="location-link" href="https://maps.app.goo.gl/u8Ys68yC1oGph1A27" target="_blank" rel="noopener noreferrer">
+              <i class="ri-map-pin-2-fill" aria-hidden="true"></i>
+              <span>Survey No. 61/1, Byappanahalli, Bidarahalli Hobli, Virgonagar Post, Bengaluru, Bengaluru Urban, Karnataka 560049</span>
+            </a>
+          </li>
         </ul>
       </div>
       <p class="copyright">&copy; <span id="year"></span> Uniflex Packaging Solutions. All rights reserved.</p>
     </footer>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="script.js?v=header-tabs-active-20260511"></script>
   </body>
 </html>

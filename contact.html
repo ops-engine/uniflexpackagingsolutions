@@ -9,6 +9,7 @@
     <meta name="theme-color" content="#1e3a8a" />
     <link rel="stylesheet" href="styles.css?v=header-tabs-active-20260511" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -57,12 +58,19 @@
             </div>
           </div>
           <div class="nav-group">
-            <a class="nav-link nav-link--has-sub" href="index.html#solutions">Solutions</a>
-            <div class="nav-panel" role="region" aria-label="Solutions menu">
-              <a href="index.html#solutions">All solutions</a>
-              <a href="index.html#gravure">Gravure printed pouches</a>
-              <a href="index.html#digital">Digital printed pouches</a>
-              <a href="index.html#specialty">Specialty packaging</a>
+            <a class="nav-link nav-link--has-sub" href="hologram-sticker.html">Hologram Security Stickers</a>
+            <div class="nav-panel nav-panel--wide" role="region" aria-label="Hologram sticker formats">
+              <a href="hologram/hologram-hot-stamping-foil.html">Hologram Hot Stamping Foil</a>
+              <a href="hologram/qr-code-hologram-stickers.html">QR Code Hologram Stickers</a>
+              <a href="hologram/customized-text-hologram.html">Customized Text Hologram</a>
+              <a href="hologram/laser-numbered-holograms.html">Laser Numbered Holograms</a>
+              <a href="hologram/holographic-pouches.html">Holographic Pouches</a>
+              <a href="hologram/hologram-paper-label.html">Holographic Paper Labels</a>
+              <a href="hologram/holographic-security-tapes.html">Holographic Security Tapes</a>
+              <a href="hologram/hologram-shrink-sleeves.html">Hologram Shrink Sleeves</a>
+              <a href="hologram/hologram-coupons.html">Hologram Coupons</a>
+              <a href="hologram/id-overlay-holograms.html">ID Overlay Holograms</a>
+              <a href="hologram/generic-hologram-stickers.html">Generic Hologram Stickers</a>
             </div>
           </div>
           <a class="nav-link" href="gallery.html">Gallery</a>
@@ -77,83 +85,95 @@
     </div>
 
     <main id="main-content">
-      <div class="page-hero page-hero--compact">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> · Contact</nav>
-        <h1>Contact &amp; enquiries</h1>
-        <p class="hero-text">Tell us about your product and timeline—we will respond with practical packaging options.</p>
-      </div>
-            <section class="section contact-section">
-        <div class="contact-copy">
-          <p class="eyebrow">Need advice?</p>
-          <h2>Get in touch with our packaging experts</h2>
-          <p>
-            Share your pouch type, industry, phone number, and budget range. We will help
-            identify a practical packaging route for your product.
-          </p>
-          <div class="contact-card">
-            <strong>Uniflex Packaging Solutions</strong>
-            <a href="mailto:info@uniflexpackagingsolutions.com">info@uniflexpackagingsolutions.com</a>
-            <a href="tel:+910000000000">+91 00000 00000</a>
-            <span>Serving brands across India</span>
+      <section class="section contact-page">
+        <div class="layout-page contact-page__grid">
+          <div class="contact-page__info">
+            <nav class="breadcrumb contact-page__breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> · Contact</nav>
+            <h1 class="eyebrow section-label">Contact us</h1>
+            <ul class="contact-page__details">
+              <li>
+                <a class="contact-page__detail" href="https://maps.app.goo.gl/bsWXXG1VSUHhUwGw6" target="_blank" rel="noopener noreferrer">
+                  <span class="contact-page__icon" aria-hidden="true"><i class="ri-map-pin-2-fill"></i></span>
+                  <span>Survey No. 352, Ground Floor, Ramakuppam Main Road, Kyasamballi Village, KGF Taluk, Kolar, Karnataka 563121</span>
+                </a>
+              </li>
+              <li>
+                <a class="contact-page__detail" href="https://maps.app.goo.gl/u8Ys68yC1oGph1A27" target="_blank" rel="noopener noreferrer">
+                  <span class="contact-page__icon" aria-hidden="true"><i class="ri-map-pin-2-fill"></i></span>
+                  <span>Survey No. 61/1, Byappanahalli, Bidarahalli Hobli, Virgonagar Post, Bengaluru, Bengaluru Urban, Karnataka 560049</span>
+                </a>
+              </li>
+              <li>
+                <a class="contact-page__detail" href="tel:+919686960545">
+                  <span class="contact-page__icon" aria-hidden="true"><i class="ri-phone-fill"></i></span>
+                  <span>+91 96869 60545</span>
+                </a>
+              </li>
+              <li>
+                <a class="contact-page__detail" href="mailto:contact-us@uniflexpackagingsolutions.com">
+                  <span class="contact-page__icon" aria-hidden="true"><i class="ri-mail-fill"></i></span>
+                  <span>contact-us@uniflexpackagingsolutions.com</span>
+                </a>
+              </li>
+            </ul>
+            <div class="contact-page__block">
+              <h2 class="eyebrow section-label">Find us</h2>
+              <div class="find-us__map find-us__map--single contact-page__map">
+                <div
+                  class="find-us__leaflet"
+                  data-find-us-map
+                  data-map-a-lat="12.955057"
+                  data-map-a-lng="78.345284"
+                  data-map-a-title="Kolar location"
+                  data-map-a-address="Survey No. 352, Ground Floor, Ramakuppam Main Road, Kyasamballi Village, KGF Taluk, Kolar, Karnataka 563121"
+                  data-map-b-lat="13.072494"
+                  data-map-b-lng="77.721146"
+                  data-map-b-title="Bengaluru location"
+                  data-map-b-address="Survey No. 61/1, Byappanahalli, Bidarahalli Hobli, Virgonagar Post, Bengaluru, Bengaluru Urban, Karnataka 560049"
+                  aria-label="Map with Kolar and Bengaluru pinned locations"
+                ></div>
+              </div>
+            </div>
+            <div class="contact-page__block">
+              <h2 class="eyebrow section-label">Follow us</h2>
+              <div class="contact-page__social" aria-label="Social media">
+                <a class="contact-page__social-link" href="#" aria-label="Facebook"><i class="ri-facebook-fill" aria-hidden="true"></i></a>
+                <a class="contact-page__social-link" href="#" aria-label="Twitter"><i class="ri-twitter-x-fill" aria-hidden="true"></i></a>
+                <a class="contact-page__social-link" href="#" aria-label="YouTube"><i class="ri-youtube-fill" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-page__form-wrap">
+            <form class="contact-page__form quote-form" name="packaging-inquiry" action="mailto:contact-us@uniflexpackagingsolutions.com" method="post" enctype="text/plain">
+              <div class="contact-page__form-brand">
+                <img src="images/brand/uniflex-logo-clean-4k.png" width="3840" height="1207" alt="Uniflex Packaging Solutions" loading="lazy" decoding="async" />
+              </div>
+              <p class="eyebrow contact-page__form-eyebrow">Send a message</p>
+              <h2 class="contact-page__form-heading">Tell us about your packaging needs</h2>
+              <label>
+                Name <span class="required" aria-hidden="true">*</span>
+                <input name="name" type="text" autocomplete="name" required />
+              </label>
+              <label>
+                Email <span class="required" aria-hidden="true">*</span>
+                <input name="email" type="email" autocomplete="email" required />
+              </label>
+              <label>
+                Phone <span class="required" aria-hidden="true">*</span>
+                <input name="phone" type="tel" autocomplete="tel" placeholder="+91 98765 43210" required />
+              </label>
+              <label>
+                Subject <span class="required" aria-hidden="true">*</span>
+                <input name="subject" type="text" required />
+              </label>
+              <label class="honeypot" aria-hidden="true">
+                If you are human, leave this field blank.
+                <input name="website" tabindex="-1" autocomplete="off" />
+              </label>
+              <button class="button button-primary contact-page__submit" type="submit">Submit</button>
+            </form>
           </div>
         </div>
-        <form class="quote-form" name="packaging-inquiry" action="mailto:info@uniflexpackagingsolutions.com" method="post" enctype="text/plain">
-          <label>
-            Choose your packaging option
-            <select name="packaging" required>
-              <option value="">Please select</option>
-              <option>3 Side Seal Pouch</option>
-              <option>Centre Seal Pouch</option>
-              <option>Stand-Up Pouch</option>
-              <option>Shaped Pouch</option>
-              <option>4 Side Seal Pouch</option>
-              <option>Side Gusset Pouch</option>
-              <option>Retort Grade Pouch</option>
-              <option>Vacuum Pouch</option>
-              <option>Spout Pouch</option>
-              <option>Flat Bottom Pouch</option>
-              <option>Shrink Sleeve Labels</option>
-              <option>Laminated Roll</option>
-            </select>
-          </label>
-          <label>
-            Select your industry
-            <select name="industry" required>
-              <option value="">Please select</option>
-              <option>Processed Food</option>
-              <option>Tea &amp; Coffee</option>
-              <option>Household &amp; Garden</option>
-              <option>Frozen Food</option>
-              <option>Beverages</option>
-              <option>Health &amp; Personal Care</option>
-              <option>Liquid Food</option>
-              <option>Pet Food</option>
-              <option>Pharmaceutical &amp; Medical</option>
-              <option>Others</option>
-            </select>
-          </label>
-          <label>
-            Phone
-            <input name="phone" type="tel" placeholder="+91 98765 43210" required />
-          </label>
-          <label>
-            Minimum investment
-            <select name="investment" required>
-              <option value="">Please select</option>
-              <option>50,000 - 1 Lakh</option>
-              <option>1 Lakh - 2 Lakh</option>
-              <option>2 Lakh - 4 Lakh</option>
-              <option>4 Lakh - 10 Lakh</option>
-              <option>10 Lakh and Above</option>
-            </select>
-          </label>
-          <label class="honeypot" aria-hidden="true">
-            If you are human, leave this field blank.
-            <input name="website" tabindex="-1" autocomplete="off" />
-          </label>
-          <button class="button button-primary" type="submit">Submit inquiry</button>
-          <p class="form-note">By submitting, you agree to be contacted about your packaging requirement.</p>
-        </form>
       </section>
     </main>
 
@@ -169,8 +189,14 @@
       <div class="footer-col">
         <h3>Flexible pouches</h3>
         <ul>
+          <li><a href="pouches/three-side-seal.html">3 side seal pouch</a></li>
+          <li><a href="pouches/centre-seal.html">Centre seal pouch</a></li>
           <li><a href="pouches/stand-up.html">Stand-up pouch</a></li>
+          <li><a href="pouches/shaped-pouch.html">Shaped pouch</a></li>
+          <li><a href="pouches/four-side-seal.html">4 side seal pouch</a></li>
+          <li><a href="pouches/side-gusset.html">Side gusset pouch</a></li>
           <li><a href="pouches/spout.html">Spout pouch</a></li>
+          <li><a href="pouches/retort.html">Retort pouch</a></li>
           <li><a href="pouches/flat-bottom.html">Flat bottom pouch</a></li>
           <li><a href="pouches/index.html">All formats</a></li>
         </ul>
@@ -188,12 +214,30 @@
         <h3>Contact</h3>
         <ul>
           <li><a href="contact.html">Enquire now</a></li>
-          <li><a href="tel:+910000000000">+91 00000 00000</a></li>
-          <li><a href="mailto:info@uniflexpackagingsolutions.com">Email us</a></li>
+          <li><a href="tel:+919686960545">+91 96869 60545</a></li>
+          <li><a href="mailto:contact-us@uniflexpackagingsolutions.com">contact-us@uniflexpackagingsolutions.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Address</h3>
+        <ul>
+          <li>
+            <a class="location-link" href="https://maps.app.goo.gl/bsWXXG1VSUHhUwGw6" target="_blank" rel="noopener noreferrer">
+              <i class="ri-map-pin-2-fill" aria-hidden="true"></i>
+              <span>Survey No. 352, Ground Floor, Ramakuppam Main Road, Kyasamballi Village, KGF Taluk, Kolar, Karnataka 563121</span>
+            </a>
+          </li>
+          <li>
+            <a class="location-link" href="https://maps.app.goo.gl/u8Ys68yC1oGph1A27" target="_blank" rel="noopener noreferrer">
+              <i class="ri-map-pin-2-fill" aria-hidden="true"></i>
+              <span>Survey No. 61/1, Byappanahalli, Bidarahalli Hobli, Virgonagar Post, Bengaluru, Bengaluru Urban, Karnataka 560049</span>
+            </a>
+          </li>
         </ul>
       </div>
       <p class="copyright">&copy; <span id="year"></span> Uniflex Packaging Solutions. All rights reserved.</p>
     </footer>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="script.js?v=header-tabs-active-20260511"></script>
   </body>
 </html>

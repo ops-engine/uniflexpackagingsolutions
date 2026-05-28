@@ -15,6 +15,8 @@ const headerRoot = `<!doctype html>
     <link rel="canonical" href="{{CANONICAL}}" />
     <meta name="theme-color" content="#1e3a8a" />
     <link rel="stylesheet" href="{{CSS}}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -32,6 +34,19 @@ const headerRoot = `<!doctype html>
             <div class="nav-panel" role="region" aria-label="About menu">
               <a href="{{HOME}}about.html">Our company</a>
               <a href="{{HOME}}about.html#approach">How we work</a>
+              <div class="nav-subgroup" role="group" aria-label="Industries links">
+                <a class="nav-subgroup__trigger" href="{{HOME}}industries.html">Industries</a>
+                <div class="nav-subgroup__panel">
+                  <a href="{{HOME}}industries.html#processed-food"><i class="ri-restaurant-2-line nav-industry-icon" aria-hidden="true"></i><span>Processed food</span></a>
+                  <a href="{{HOME}}industries.html#tea-coffee"><i class="ri-cup-line nav-industry-icon" aria-hidden="true"></i><span>Tea &amp; coffee</span></a>
+                  <a href="{{HOME}}industries.html#household"><i class="ri-home-gear-line nav-industry-icon" aria-hidden="true"></i><span>Household &amp; garden</span></a>
+                  <a href="{{HOME}}industries.html#pet-food"><i class="ri-footprint-line nav-industry-icon" aria-hidden="true"></i><span>Pet food</span></a>
+                  <a href="{{HOME}}industries.html#liquid-food"><i class="ri-goblet-line nav-industry-icon" aria-hidden="true"></i><span>Liquid food</span></a>
+                  <a href="{{HOME}}industries.html#personal-care"><i class="ri-hand-sanitizer-line nav-industry-icon" aria-hidden="true"></i><span>Health &amp; personal care</span></a>
+                  <a href="{{HOME}}industries.html#beverages"><i class="ri-cup-line nav-industry-icon" aria-hidden="true"></i><span>Beverages</span></a>
+                  <a href="{{HOME}}industries.html#medical"><i class="ri-medicine-bottle-line nav-industry-icon" aria-hidden="true"></i><span>Medical &amp; pharmaceuticals</span></a>
+                </div>
+              </div>
             </div>
           </div>
           <div class="nav-group">
@@ -50,25 +65,19 @@ const headerRoot = `<!doctype html>
             </div>
           </div>
           <div class="nav-group">
-            <a class="nav-link nav-link--has-sub" href="{{HOME}}index.html#solutions">Solutions</a>
-            <div class="nav-panel" role="region" aria-label="Solutions menu">
-              <a href="{{HOME}}index.html#solutions">All solutions</a>
-              <a href="{{HOME}}index.html#gravure">Gravure printed pouches</a>
-              <a href="{{HOME}}index.html#digital">Digital printed pouches</a>
-              <a href="{{HOME}}index.html#specialty">Specialty packaging</a>
-            </div>
-          </div>
-          <div class="nav-group">
-            <a class="nav-link nav-link--has-sub" href="{{HOME}}industries.html">Industries</a>
-            <div class="nav-panel nav-panel--wide" role="region" aria-label="Industries menu">
-              <a href="{{HOME}}industries.html#processed-food">Processed food</a>
-              <a href="{{HOME}}industries.html#tea-coffee">Tea &amp; coffee</a>
-              <a href="{{HOME}}industries.html#household">Household &amp; garden</a>
-              <a href="{{HOME}}industries.html#pet-food">Pet food</a>
-              <a href="{{HOME}}industries.html#liquid-food">Liquid food</a>
-              <a href="{{HOME}}industries.html#personal-care">Health &amp; personal care</a>
-              <a href="{{HOME}}industries.html#beverages">Beverages</a>
-              <a href="{{HOME}}industries.html#medical">Medical &amp; pharmaceuticals</a>
+            <a class="nav-link nav-link--has-sub" href="{{HOME}}hologram-sticker.html">Hologram Security Stickers</a>
+            <div class="nav-panel nav-panel--wide" role="region" aria-label="Hologram sticker formats">
+              <a href="{{HOME}}hologram/hologram-hot-stamping-foil.html">Hologram Hot Stamping Foil</a>
+              <a href="{{HOME}}hologram/qr-code-hologram-stickers.html">QR Code Hologram Stickers</a>
+              <a href="{{HOME}}hologram/customized-text-hologram.html">Customized Text Hologram</a>
+              <a href="{{HOME}}hologram/laser-numbered-holograms.html">Laser Numbered Holograms</a>
+              <a href="{{HOME}}hologram/holographic-pouches.html">Holographic Pouches</a>
+              <a href="{{HOME}}hologram/hologram-paper-label.html">Holographic Paper Labels</a>
+              <a href="{{HOME}}hologram/holographic-security-tapes.html">Holographic Security Tapes</a>
+              <a href="{{HOME}}hologram/hologram-shrink-sleeves.html">Hologram Shrink Sleeves</a>
+              <a href="{{HOME}}hologram/hologram-coupons.html">Hologram Coupons</a>
+              <a href="{{HOME}}hologram/id-overlay-holograms.html">ID Overlay Holograms</a>
+              <a href="{{HOME}}hologram/generic-hologram-stickers.html">Generic Hologram Stickers</a>
             </div>
           </div>
           <a class="nav-link" href="{{HOME}}gallery.html">Gallery</a>
@@ -94,8 +103,14 @@ const footerRoot = `<footer class="site-footer site-footer--columns">
       <div class="footer-col">
         <h3>Flexible pouches</h3>
         <ul>
+          <li><a href="{{HOME}}pouches/three-side-seal.html">3 side seal pouch</a></li>
+          <li><a href="{{HOME}}pouches/centre-seal.html">Centre seal pouch</a></li>
           <li><a href="{{HOME}}pouches/stand-up.html">Stand-up pouch</a></li>
+          <li><a href="{{HOME}}pouches/shaped-pouch.html">Shaped pouch</a></li>
+          <li><a href="{{HOME}}pouches/four-side-seal.html">4 side seal pouch</a></li>
+          <li><a href="{{HOME}}pouches/side-gusset.html">Side gusset pouch</a></li>
           <li><a href="{{HOME}}pouches/spout.html">Spout pouch</a></li>
+          <li><a href="{{HOME}}pouches/retort.html">Retort pouch</a></li>
           <li><a href="{{HOME}}pouches/flat-bottom.html">Flat bottom pouch</a></li>
           <li><a href="{{HOME}}pouches/index.html">All formats</a></li>
         </ul>
@@ -105,7 +120,7 @@ const footerRoot = `<footer class="site-footer site-footer--columns">
         <ul>
           <li><a href="{{HOME}}about.html">About us</a></li>
           <li><a href="{{HOME}}gallery.html">Gallery</a></li>
-          <li><a href="{{HOME}}industries.html">Industries</a></li>
+          <li><a href="{{HOME}}industries.html"><i class="ri-apps-2-line nav-industry-icon" aria-hidden="true"></i><span>Industries</span></a></li>
           <li><a href="{{HOME}}privacy.html">Privacy policy</a></li>
         </ul>
       </div>
@@ -113,12 +128,30 @@ const footerRoot = `<footer class="site-footer site-footer--columns">
         <h3>Contact</h3>
         <ul>
           <li><a href="{{HOME}}contact.html">Enquire now</a></li>
-          <li><a href="tel:+910000000000">+91 00000 00000</a></li>
-          <li><a href="mailto:info@uniflexpackagingsolutions.com">Email us</a></li>
+          <li><a href="tel:+919686960545">+91 96869 60545</a></li>
+          <li><a href="mailto:contact-us@uniflexpackagingsolutions.com">contact-us@uniflexpackagingsolutions.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Address</h3>
+        <ul>
+          <li>
+            <a class="location-link" href="https://maps.app.goo.gl/bsWXXG1VSUHhUwGw6" target="_blank" rel="noopener noreferrer">
+              <i class="ri-map-pin-2-fill" aria-hidden="true"></i>
+              <span>Survey No. 352, Ground Floor, Ramakuppam Main Road, Kyasamballi Village, KGF Taluk, Kolar, Karnataka 563121</span>
+            </a>
+          </li>
+          <li>
+            <a class="location-link" href="https://maps.app.goo.gl/u8Ys68yC1oGph1A27" target="_blank" rel="noopener noreferrer">
+              <i class="ri-map-pin-2-fill" aria-hidden="true"></i>
+              <span>Survey No. 61/1, Byappanahalli, Bidarahalli Hobli, Virgonagar Post, Bengaluru, Bengaluru Urban, Karnataka 560049</span>
+            </a>
+          </li>
         </ul>
       </div>
       <p class="copyright">&copy; <span id="year"></span> Uniflex Packaging Solutions. All rights reserved.</p>
     </footer>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="{{JS}}script.js?v=header-tabs-active-20260511"></script>
   </body>
 </html>`;
@@ -145,78 +178,95 @@ ${foot}`;
 
 const base = "https://ops-engine.github.io/uniflexpackagingsolutions";
 
-const contactForm = `      <section class="section contact-section">
-        <div class="contact-copy">
-          <p class="eyebrow">Need advice?</p>
-          <h2>Get in touch with our packaging experts</h2>
-          <p>
-            Share your pouch type, industry, phone number, and budget range. We will help
-            identify a practical packaging route for your product.
-          </p>
-          <div class="contact-card">
-            <strong>Uniflex Packaging Solutions</strong>
-            <a href="mailto:info@uniflexpackagingsolutions.com">info@uniflexpackagingsolutions.com</a>
-            <a href="tel:+910000000000">+91 00000 00000</a>
-            <span>Serving brands across India</span>
+const contactForm = `      <section class="section contact-page">
+        <div class="layout-page contact-page__grid">
+          <div class="contact-page__info">
+            <nav class="breadcrumb contact-page__breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> · Contact</nav>
+            <h1 class="eyebrow section-label">Contact us</h1>
+            <ul class="contact-page__details">
+              <li>
+                <a class="contact-page__detail" href="https://maps.app.goo.gl/bsWXXG1VSUHhUwGw6" target="_blank" rel="noopener noreferrer">
+                  <span class="contact-page__icon" aria-hidden="true"><i class="ri-map-pin-2-fill"></i></span>
+                  <span>Survey No. 352, Ground Floor, Ramakuppam Main Road, Kyasamballi Village, KGF Taluk, Kolar, Karnataka 563121</span>
+                </a>
+              </li>
+              <li>
+                <a class="contact-page__detail" href="https://maps.app.goo.gl/u8Ys68yC1oGph1A27" target="_blank" rel="noopener noreferrer">
+                  <span class="contact-page__icon" aria-hidden="true"><i class="ri-map-pin-2-fill"></i></span>
+                  <span>Survey No. 61/1, Byappanahalli, Bidarahalli Hobli, Virgonagar Post, Bengaluru, Bengaluru Urban, Karnataka 560049</span>
+                </a>
+              </li>
+              <li>
+                <a class="contact-page__detail" href="tel:+919686960545">
+                  <span class="contact-page__icon" aria-hidden="true"><i class="ri-phone-fill"></i></span>
+                  <span>+91 96869 60545</span>
+                </a>
+              </li>
+              <li>
+                <a class="contact-page__detail" href="mailto:contact-us@uniflexpackagingsolutions.com">
+                  <span class="contact-page__icon" aria-hidden="true"><i class="ri-mail-fill"></i></span>
+                  <span>contact-us@uniflexpackagingsolutions.com</span>
+                </a>
+              </li>
+            </ul>
+            <div class="contact-page__block">
+              <h2 class="eyebrow section-label">Find us</h2>
+              <div class="find-us__map find-us__map--single contact-page__map">
+                <div
+                  class="find-us__leaflet"
+                  data-find-us-map
+                  data-map-a-lat="12.955057"
+                  data-map-a-lng="78.345284"
+                  data-map-a-title="Kolar location"
+                  data-map-a-address="Survey No. 352, Ground Floor, Ramakuppam Main Road, Kyasamballi Village, KGF Taluk, Kolar, Karnataka 563121"
+                  data-map-b-lat="13.072494"
+                  data-map-b-lng="77.721146"
+                  data-map-b-title="Bengaluru location"
+                  data-map-b-address="Survey No. 61/1, Byappanahalli, Bidarahalli Hobli, Virgonagar Post, Bengaluru, Bengaluru Urban, Karnataka 560049"
+                  aria-label="Map with Kolar and Bengaluru pinned locations"
+                ></div>
+              </div>
+            </div>
+            <div class="contact-page__block">
+              <h2 class="eyebrow section-label">Follow us</h2>
+              <div class="contact-page__social" aria-label="Social media">
+                <a class="contact-page__social-link" href="#" aria-label="Facebook"><i class="ri-facebook-fill" aria-hidden="true"></i></a>
+                <a class="contact-page__social-link" href="#" aria-label="Twitter"><i class="ri-twitter-x-fill" aria-hidden="true"></i></a>
+                <a class="contact-page__social-link" href="#" aria-label="YouTube"><i class="ri-youtube-fill" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-page__form-wrap">
+            <form class="contact-page__form quote-form" name="packaging-inquiry" action="mailto:contact-us@uniflexpackagingsolutions.com" method="post" enctype="text/plain">
+              <div class="contact-page__form-brand">
+                <img src="images/brand/uniflex-logo-clean-4k.png" width="3840" height="1207" alt="Uniflex Packaging Solutions" loading="lazy" decoding="async" />
+              </div>
+              <p class="eyebrow contact-page__form-eyebrow">Send a message</p>
+              <h2 class="contact-page__form-heading">Tell us about your packaging needs</h2>
+              <label>
+                Name <span class="required" aria-hidden="true">*</span>
+                <input name="name" type="text" autocomplete="name" required />
+              </label>
+              <label>
+                Email <span class="required" aria-hidden="true">*</span>
+                <input name="email" type="email" autocomplete="email" required />
+              </label>
+              <label>
+                Phone <span class="required" aria-hidden="true">*</span>
+                <input name="phone" type="tel" autocomplete="tel" placeholder="+91 98765 43210" required />
+              </label>
+              <label>
+                Subject <span class="required" aria-hidden="true">*</span>
+                <input name="subject" type="text" required />
+              </label>
+              <label class="honeypot" aria-hidden="true">
+                If you are human, leave this field blank.
+                <input name="website" tabindex="-1" autocomplete="off" />
+              </label>
+              <button class="button button-primary contact-page__submit" type="submit">Submit</button>
+            </form>
           </div>
         </div>
-        <form class="quote-form" name="packaging-inquiry" action="mailto:info@uniflexpackagingsolutions.com" method="post" enctype="text/plain">
-          <label>
-            Choose your packaging option
-            <select name="packaging" required>
-              <option value="">Please select</option>
-              <option>3 Side Seal Pouch</option>
-              <option>Centre Seal Pouch</option>
-              <option>Stand-Up Pouch</option>
-              <option>Shaped Pouch</option>
-              <option>4 Side Seal Pouch</option>
-              <option>Side Gusset Pouch</option>
-              <option>Retort Grade Pouch</option>
-              <option>Vacuum Pouch</option>
-              <option>Spout Pouch</option>
-              <option>Flat Bottom Pouch</option>
-              <option>Shrink Sleeve Labels</option>
-              <option>Laminated Roll</option>
-            </select>
-          </label>
-          <label>
-            Select your industry
-            <select name="industry" required>
-              <option value="">Please select</option>
-              <option>Processed Food</option>
-              <option>Tea &amp; Coffee</option>
-              <option>Household &amp; Garden</option>
-              <option>Frozen Food</option>
-              <option>Beverages</option>
-              <option>Health &amp; Personal Care</option>
-              <option>Liquid Food</option>
-              <option>Pet Food</option>
-              <option>Pharmaceutical &amp; Medical</option>
-              <option>Others</option>
-            </select>
-          </label>
-          <label>
-            Phone
-            <input name="phone" type="tel" placeholder="+91 98765 43210" required />
-          </label>
-          <label>
-            Minimum investment
-            <select name="investment" required>
-              <option value="">Please select</option>
-              <option>50,000 - 1 Lakh</option>
-              <option>1 Lakh - 2 Lakh</option>
-              <option>2 Lakh - 4 Lakh</option>
-              <option>4 Lakh - 10 Lakh</option>
-              <option>10 Lakh and Above</option>
-            </select>
-          </label>
-          <label class="honeypot" aria-hidden="true">
-            If you are human, leave this field blank.
-            <input name="website" tabindex="-1" autocomplete="off" />
-          </label>
-          <button class="button button-primary" type="submit">Submit inquiry</button>
-          <p class="form-note">By submitting, you agree to be contacted about your packaging requirement.</p>
-        </form>
       </section>`;
 
 const pages = [
@@ -227,24 +277,106 @@ const pages = [
     canonical: `${base}/about.html`,
     main: `      <div class="page-hero page-hero--compact">
         <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> · About</nav>
-        <h1>About Uniflex Packaging Solutions</h1>
+        <h1 class="eyebrow section-label">About us</h1>
         <p class="hero-text">We combine material science, print quality, and practical programme management so your packaging performs on shelf and on the filling line.</p>
       </div>
-      <div class="layout-page prose">
-        <h2>Who we are</h2>
-        <p>
-          Uniflex partners with growing consumer brands across food, beverage, personal care, and adjacent categories.
-          Our focus is dependable barrier performance, sharp artwork reproduction, and packaging formats that suit your scale—whether you are validating a pilot SKU or scaling bulk production.
-        </p>
-        <h2 id="approach">How we work</h2>
-        <p>
-          We start with your product, distribution environment, and filling equipment. From there we shortlist laminate structures,
-          recommend gravure or digital print routes, and align features such as zippers, spouts, or tear notches with your operations team.
-        </p>
-        <p class="page-actions">
-          <a class="button button-primary" href="contact.html">Talk to our team</a>
-          <a class="button button-secondary" href="pouches/index.html">Explore pouches</a>
-        </p>
+      <div class="layout-page">
+        <div class="about-overview-grid">
+          <div class="prose">
+            <h2 class="eyebrow section-label">Who we are</h2>
+            <p>
+              Uniflex partners with growing consumer brands across food, beverage, personal care, and adjacent categories.
+              Our focus is dependable barrier performance, sharp artwork reproduction, and packaging formats that suit your scale—whether you are validating a pilot SKU or scaling bulk production.
+            </p>
+            <h2 class="eyebrow section-label">Find us</h2>
+            <ul class="location-list">
+              <li>
+                <a class="location-link" href="https://maps.app.goo.gl/bsWXXG1VSUHhUwGw6" target="_blank" rel="noopener noreferrer">
+                  <i class="ri-map-pin-2-fill" aria-hidden="true"></i>
+                  <span>Survey No. 352, Ground Floor, Ramakuppam Main Road, Kyasamballi Village, KGF Taluk, Kolar, Karnataka 563121</span>
+                </a>
+              </li>
+              <li>
+                <a class="location-link" href="https://maps.app.goo.gl/u8Ys68yC1oGph1A27" target="_blank" rel="noopener noreferrer">
+                  <i class="ri-map-pin-2-fill" aria-hidden="true"></i>
+                  <span>Survey No. 61/1, Byappanahalli, Bidarahalli Hobli, Virgonagar Post, Bengaluru, Bengaluru Urban, Karnataka 560049</span>
+                </a>
+              </li>
+            </ul>
+            <h2 id="approach" class="eyebrow section-label about-approach-title">How we work</h2>
+            <p>
+              We start with your product, distribution environment, and filling equipment. From there we shortlist laminate structures,
+              recommend gravure or digital print routes, and align features such as zippers, spouts, or tear notches with your operations team.
+            </p>
+            <p class="page-actions">
+              <a class="button button-primary" href="contact.html">Talk to our team</a>
+              <a class="button button-secondary" href="pouches/index.html">Explore pouches</a>
+            </p>
+          </div>
+          <section class="find-us find-us--panel" aria-labelledby="find-us-title">
+            <h2 id="find-us-title" class="eyebrow section-label">Find us</h2>
+            <div class="find-us__map find-us__map--single">
+              <div
+                class="find-us__leaflet"
+                data-find-us-map
+                data-map-a-lat="12.955057"
+                data-map-a-lng="78.345284"
+                data-map-a-title="Kolar location"
+                data-map-a-address="Survey No. 352, Ground Floor, Ramakuppam Main Road, Kyasamballi Village, KGF Taluk, Kolar, Karnataka 563121"
+                data-map-b-lat="13.072494"
+                data-map-b-lng="77.721146"
+                data-map-b-title="Bengaluru location"
+                data-map-b-address="Survey No. 61/1, Byappanahalli, Bidarahalli Hobli, Virgonagar Post, Bengaluru, Bengaluru Urban, Karnataka 560049"
+                aria-label="Map with Kolar and Bengaluru pinned locations"
+              ></div>
+            </div>
+          </section>
+        </div>
+
+        <section class="about-machinery" aria-labelledby="about-machinery-title">
+          <div class="section-heading">
+            <h2 id="about-machinery-title" class="eyebrow section-label">Our machinery</h2>
+            <p>Each line is tuned for print precision, laminate consistency, and stable converting throughput.</p>
+          </div>
+          <div class="about-machinery__grid">
+            <figure class="about-machinery__card">
+              <img class="about-machinery__img" src="images/about/machinery-01-extrusion-4k.png" srcset="images/about/machinery-01-extrusion.png 1024w, images/about/machinery-01-extrusion-4k.png 3840w" sizes="(min-width: 1200px) 23vw, (min-width: 760px) 48vw, 100vw" width="3840" height="3772" alt="Extrusion machine line." loading="lazy" decoding="async" />
+              <figcaption>Extrusion</figcaption>
+            </figure>
+            <figure class="about-machinery__card">
+              <img class="about-machinery__img" src="images/about/machinery-02-stand-up-pouching-a-4k.png" srcset="images/about/machinery-02-stand-up-pouching-a.png 1000w, images/about/machinery-02-stand-up-pouching-a-4k.png 3840w" sizes="(min-width: 1200px) 23vw, (min-width: 760px) 48vw, 100vw" width="3840" height="2561" alt="Stand up pouching machine line." loading="lazy" decoding="async" />
+              <figcaption>Stand up pouching machine</figcaption>
+            </figure>
+            <figure class="about-machinery__card">
+              <img class="about-machinery__img" src="images/about/machinery-03-stand-up-pouching-b-4k.png" srcset="images/about/machinery-03-stand-up-pouching-b.png 1000w, images/about/machinery-03-stand-up-pouching-b-4k.png 3840w" sizes="(min-width: 1200px) 23vw, (min-width: 760px) 48vw, 100vw" width="3840" height="2561" alt="Stand up pouching machine setup." loading="lazy" decoding="async" />
+              <figcaption>Stand up pouching machine</figcaption>
+            </figure>
+            <figure class="about-machinery__card">
+              <img class="about-machinery__img" src="images/about/machinery-04-stand-up-zipper-pouch-machine-4k.png" srcset="images/about/machinery-04-stand-up-zipper-pouch-machine.png 1024w, images/about/machinery-04-stand-up-zipper-pouch-machine-4k.png 3840w" sizes="(min-width: 1200px) 23vw, (min-width: 760px) 48vw, 100vw" width="3840" height="2876" alt="Stand up zipper pouch machine." loading="lazy" decoding="async" />
+              <figcaption>Stand up zipper pouch machine</figcaption>
+            </figure>
+            <figure class="about-machinery__card">
+              <img class="about-machinery__img" src="images/about/machinery-05-lamination-machine-4k.png" srcset="images/about/machinery-05-lamination-machine.png 1024w, images/about/machinery-05-lamination-machine-4k.png 3840w" sizes="(min-width: 1200px) 23vw, (min-width: 760px) 48vw, 100vw" width="3840" height="2587" alt="Lamination machine on production floor." loading="lazy" decoding="async" />
+              <figcaption>Lamination machine</figcaption>
+            </figure>
+            <figure class="about-machinery__card">
+              <img class="about-machinery__img" src="images/about/machinery-06-8-color-rotogravure-printing-machine-4k.png" srcset="images/about/machinery-06-8-color-rotogravure-printing-machine.png 500w, images/about/machinery-06-8-color-rotogravure-printing-machine-4k.png 3840w" sizes="(min-width: 1200px) 23vw, (min-width: 760px) 48vw, 100vw" width="3840" height="4900" alt="8 color rotogravure printing machine." loading="lazy" decoding="async" />
+              <figcaption>8 color rotogravure printing machine</figcaption>
+            </figure>
+            <figure class="about-machinery__card">
+              <img class="about-machinery__img" src="images/about/machinery-07-multilayer-film-extrusion-machine-4k.png" srcset="images/about/machinery-07-multilayer-film-extrusion-machine.png 767w, images/about/machinery-07-multilayer-film-extrusion-machine-4k.png 3840w" sizes="(min-width: 1200px) 23vw, (min-width: 760px) 48vw, 100vw" width="3840" height="5126" alt="Multilayer film extrusion machine." loading="lazy" decoding="async" />
+              <figcaption>Multilayer film extrusion machine</figcaption>
+            </figure>
+            <figure class="about-machinery__card">
+              <img class="about-machinery__img" src="images/about/machinery-08-slitting-machine-4k.png" srcset="images/about/machinery-08-slitting-machine.png 1024w, images/about/machinery-08-slitting-machine-4k.png 3840w" sizes="(min-width: 1200px) 23vw, (min-width: 760px) 48vw, 100vw" width="3840" height="2572" alt="Slitting machine with roll handling." loading="lazy" decoding="async" />
+              <figcaption>Slitting machine</figcaption>
+            </figure>
+            <figure class="about-machinery__card">
+              <img class="about-machinery__img" src="images/about/machinery-09-pouch-making-machines-4k.png" srcset="images/about/machinery-09-pouch-making-machines.png 1000w, images/about/machinery-09-pouch-making-machines-4k.png 3840w" sizes="(min-width: 1200px) 23vw, (min-width: 760px) 48vw, 100vw" width="3840" height="2561" alt="Pouch making machines in production line." loading="lazy" decoding="async" />
+              <figcaption>Pouch making machines</figcaption>
+            </figure>
+          </div>
+        </section>
       </div>`,
   },
   {
@@ -252,12 +384,7 @@ const pages = [
     title: "Contact | Uniflex Packaging Solutions",
     desc: "Contact Uniflex Packaging Solutions for flexible pouch, roll stock, and label enquiries.",
     canonical: `${base}/contact.html`,
-    main: `      <div class="page-hero page-hero--compact">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> · Contact</nav>
-        <h1>Contact &amp; enquiries</h1>
-        <p class="hero-text">Tell us about your product and timeline—we will respond with practical packaging options.</p>
-      </div>
-      ${contactForm}`,
+    main: contactForm,
   },
   {
     file: "gallery.html",
@@ -279,36 +406,36 @@ const pages = [
         </p>
         <div class="gallery-grid">
           <figure class="gallery-item">
-            <img src="images/gallery/gallery-01-cheese-slices.png" width="864" height="864" alt="Cheese slices flexible pack with product styling." loading="lazy" decoding="async" />
-            <figcaption class="gallery-caption">Cheese slices pouch</figcaption>
+            <img src="images/gallery/gallery-01-cheese-slices.png" width="864" height="864" alt="Tamper-evident security tape roll with repeating red labels." loading="lazy" decoding="async" />
+            <figcaption class="gallery-caption">Tamper-evident security tape roll</figcaption>
           </figure>
           <figure class="gallery-item">
-            <img src="images/gallery/gallery-02-incense-box.png" width="768" height="768" alt="Black Stone incense carton packaging in a lifestyle setup." loading="lazy" decoding="async" />
-            <figcaption class="gallery-caption">Incense carton pack</figcaption>
+            <img src="images/gallery/gallery-02-incense-box.png" width="768" height="768" alt="Teju garam masala retail pouch in product mockup style." loading="lazy" decoding="async" />
+            <figcaption class="gallery-caption">Garam masala printed pouch</figcaption>
           </figure>
           <figure class="gallery-item">
-            <img src="images/gallery/gallery-03-wheat-flour.png" width="768" height="768" alt="Wheat flour flexible pack with surrounding product styling." loading="lazy" decoding="async" />
-            <figcaption class="gallery-caption">Wheat flour retail pouch</figcaption>
+            <img src="images/gallery/gallery-03-wheat-flour.png" width="768" height="768" alt="Printed label roll with silver and red panel artwork." loading="lazy" decoding="async" />
+            <figcaption class="gallery-caption">Printed label roll</figcaption>
           </figure>
           <figure class="gallery-item">
-            <img src="images/gallery/gallery-04-incense-pouch.png" width="768" height="768" alt="Black special incense pouch photographed with candles and incense sticks." loading="lazy" decoding="async" />
-            <figcaption class="gallery-caption">Incense pouch format</figcaption>
+            <img src="images/gallery/gallery-04-incense-pouch.png" width="768" height="768" alt="Slim snack bar flexible stick pack mockup." loading="lazy" decoding="async" />
+            <figcaption class="gallery-caption">Snack bar stick pack</figcaption>
           </figure>
           <figure class="gallery-item">
-            <img src="images/gallery/gallery-05-figs-pack.png" width="768" height="768" alt="Dried figs pouch photographed with fresh and dried figs." loading="lazy" decoding="async" />
-            <figcaption class="gallery-caption">Dried figs stand-up pouch</figcaption>
+            <img src="images/gallery/gallery-05-figs-pack.png" width="768" height="768" alt="Nandini khova laminated retail pouch." loading="lazy" decoding="async" />
+            <figcaption class="gallery-caption">Khova laminated pouch</figcaption>
           </figure>
           <figure class="gallery-item">
-            <img src="images/gallery/gallery-06-sohan-papdi.png" width="768" height="768" alt="Sohan Papdi printed pouch with sweets in background." loading="lazy" decoding="async" />
-            <figcaption class="gallery-caption">Sohan Papdi sweet pack</figcaption>
+            <img src="images/gallery/gallery-06-sohan-papdi.png" width="768" height="768" alt="Nandini cookies branded flexible pouch." loading="lazy" decoding="async" />
+            <figcaption class="gallery-caption">Cookies flexible pouch</figcaption>
           </figure>
           <figure class="gallery-item">
-            <img src="images/gallery/gallery-07-incense-carton.png" width="768" height="768" alt="Agarbatti carton packaging displayed in a product scene." loading="lazy" decoding="async" />
-            <figcaption class="gallery-caption">Agarbatti carton box</figcaption>
+            <img src="images/gallery/gallery-07-incense-carton.png" width="768" height="768" alt="Masala kodubale snack pouch with white and magenta design." loading="lazy" decoding="async" />
+            <figcaption class="gallery-caption">Masala kodubale snack pouch</figcaption>
           </figure>
           <figure class="gallery-item">
-            <img src="images/gallery/gallery-08-handwash-spout.png" width="768" height="768" alt="Handwash refill spout pouch photographed in a bathroom setting." loading="lazy" decoding="async" />
-            <figcaption class="gallery-caption">Handwash refill spout pouch</figcaption>
+            <img src="images/gallery/gallery-08-handwash-spout.png" width="768" height="768" alt="Rasam powder stand-up pouch with food-style background." loading="lazy" decoding="async" />
+            <figcaption class="gallery-caption">Rasam powder stand-up pouch</figcaption>
           </figure>
           <figure class="gallery-item">
             <img src="images/gallery/gallery-09-idly-dosa-pouch.png" width="500" height="500" alt="Idly and dosa batter stand-up pouch on a clean background." loading="lazy" decoding="async" />
@@ -406,6 +533,10 @@ const pages = [
             <img src="images/gallery/gallery-37-pineapple-incense-pack.png" width="500" height="500" alt="Pineapple-shaped incense packaging on a studio mockup background." loading="lazy" decoding="async" />
             <figcaption class="gallery-caption">Pineapple incense pack</figcaption>
           </figure>
+          <figure class="gallery-item">
+            <img src="images/gallery/gallery-38-sunflower-oil-bottle.png" width="500" height="500" alt="Sunflower oil bottle product shot with sunflower backdrop." loading="lazy" decoding="async" />
+            <figcaption class="gallery-caption">Sunflower oil bottle packshot</figcaption>
+          </figure>
         </div>
         <div class="gallery-cta" style="margin-top: 28px">
           <p>
@@ -428,7 +559,107 @@ const pages = [
       </div>
       <div class="layout-page prose">
         <p>This static website may collect information you voluntarily provide through email links or forms (processed by your mail client). We use it only to respond to enquiries about packaging services.</p>
-        <p>We do not sell personal data. For questions, contact <a href="mailto:info@uniflexpackagingsolutions.com">info@uniflexpackagingsolutions.com</a>.</p>
+        <p>We do not sell personal data. For questions, contact <a href="mailto:contact-us@uniflexpackagingsolutions.com">contact-us@uniflexpackagingsolutions.com</a>.</p>
+      </div>`,
+  },
+  {
+    file: "hologram-sticker.html",
+    title: "Hologram Sticker Solutions | Uniflex Packaging Solutions",
+    desc: "Explore custom hologram sticker and security label formats for anti-counterfeit protection and stronger brand authentication.",
+    canonical: `${base}/hologram-sticker.html`,
+    main: `      <div class="page-hero page-hero--compact">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> · Hologram sticker</nav>
+        <h1>Hologram sticker security solutions</h1>
+        <p class="hero-text">Brand-focused hologram formats designed for anti-counterfeit control, product traceability, and premium shelf impact.</p>
+      </div>
+      <div class="layout-page">
+        <section class="holo-showcase">
+          <div class="holo-showcase__copy">
+            <p class="holo-showcase__eyebrow">Best Hologram Sticker Manufacturer</p>
+            <h2>Stop Counterfeits Before They Damage Your Brand</h2>
+            <p>
+              Advanced hologram security solutions designed to protect products, prevent duplication, and build customer trust.
+              Secure your packaging with next-generation anti-counterfeit technology.
+            </p>
+            <div class="page-actions">
+              <a class="button button-primary" href="contact.html">Enquire now</a>
+              <a class="button button-secondary" href="contact.html">Get instant quote</a>
+            </div>
+          </div>
+          <div class="holo-showcase__visual">
+            <div class="holo-columns" aria-hidden="true">
+              <div class="holo-column holo-column--up">
+                <div class="holo-column__track">
+                  <img src="images/hologram/solutions/holo-01-hot-stamping-foil.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
+                  <img src="images/hologram/solutions/holo-02-qr-code-stickers.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
+                  <img src="images/hologram/solutions/holo-03-customized-text.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
+                  <img src="images/hologram/solutions/holo-01-hot-stamping-foil.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
+                  <img src="images/hologram/solutions/holo-02-qr-code-stickers.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
+                  <img src="images/hologram/solutions/holo-03-customized-text.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
+                </div>
+              </div>
+              <div class="holo-column holo-column--down">
+                <div class="holo-column__track">
+                  <img src="images/hologram/solutions/holo-04-laser-numbered.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
+                  <img src="images/hologram/solutions/holo-05-holographic-pouches.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
+                  <img src="images/hologram/solutions/holo-06-holographic-paper-labels.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
+                  <img src="images/hologram/solutions/holo-04-laser-numbered.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
+                  <img src="images/hologram/solutions/holo-05-holographic-pouches.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
+                  <img src="images/hologram/solutions/holo-06-holographic-paper-labels.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
+                </div>
+              </div>
+              <div class="holo-column holo-column--up">
+                <div class="holo-column__track">
+                  <img src="images/hologram/solutions/holo-07-holographic-security-tapes.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
+                  <img src="images/hologram/solutions/holo-08-shrink-sleeves.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
+                  <img src="images/hologram/solutions/holo-09-hologram-coupons.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
+                  <img src="images/hologram/solutions/holo-07-holographic-security-tapes.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
+                  <img src="images/hologram/solutions/holo-08-shrink-sleeves.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
+                  <img src="images/hologram/solutions/holo-09-hologram-coupons.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
+                </div>
+              </div>
+              <div class="holo-column holo-column--down">
+                <div class="holo-column__track">
+                  <img src="images/hologram/solutions/holo-10-id-overlay.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
+                  <img src="images/hologram/solutions/holo-11-generic-stickers.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
+                  <img src="images/hologram/solutions/holo-01-hot-stamping-foil.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
+                  <img src="images/hologram/solutions/holo-10-id-overlay.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
+                  <img src="images/hologram/solutions/holo-11-generic-stickers.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
+                  <img src="images/hologram/solutions/holo-01-hot-stamping-foil.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="holo-section-intro prose">
+          <h2>Custom Security Hologram Solution</h2>
+          <p>
+            We offer a broad portfolio of custom hologram security formats, from tamper-evident labels to
+            cost-optimized authentication stickers. Each solution combines visual impact with anti-counterfeit control
+            to help protect your products, reinforce authenticity, and improve brand trust in the market.
+          </p>
+        </section>
+        <section class="holo-listing" aria-labelledby="holo-listing-title">
+          <h2 id="holo-listing-title">Advanced security solutions</h2>
+          <div class="holo-solution-grid">
+            <article class="holo-solution-card"><img src="images/hologram/solutions/holo-01-hot-stamping-foil.png" width="1024" height="1024" alt="Hologram Hot Stamping Foil sample." loading="lazy" decoding="async" /><h3>Hologram Hot Stamping Foil</h3><p>High-security foil marks applied with heat and pressure for permanent anti-counterfeit branding.</p><a class="text-link-bold" href="hologram/hologram-hot-stamping-foil.html">Explore</a></article>
+            <article class="holo-solution-card"><img src="images/hologram/solutions/holo-02-qr-code-stickers.png" width="1024" height="1024" alt="QR Code Hologram Stickers sample." loading="lazy" decoding="async" /><h3>QR Code Hologram Stickers</h3><p>Smart labels enabling secure scan-and-verify authentication through integrated QR workflows.</p><a class="text-link-bold" href="hologram/qr-code-hologram-stickers.html">Explore</a></article>
+            <article class="holo-solution-card"><img src="images/hologram/solutions/holo-03-customized-text.png" width="1024" height="1024" alt="Customized Text Hologram sample." loading="lazy" decoding="async" /><h3>Customized Text Hologram</h3><p>Personalized hologram labels with custom text and logo identity for stronger brand protection.</p><a class="text-link-bold" href="hologram/customized-text-hologram.html">Explore</a></article>
+            <article class="holo-solution-card"><img src="images/hologram/solutions/holo-04-laser-numbered.png" width="1024" height="1024" alt="Laser Numbered Holograms sample." loading="lazy" decoding="async" /><h3>Laser Numbered Holograms</h3><p>Unique serialized holograms for product tracking, verification, and secure distribution control.</p><a class="text-link-bold" href="hologram/laser-numbered-holograms.html">Explore</a></article>
+            <article class="holo-solution-card"><img src="images/hologram/solutions/holo-05-holographic-pouches.png" width="1024" height="1024" alt="Holographic Pouches sample." loading="lazy" decoding="async" /><h3>Holographic Pouches</h3><p>Flexible holographic pouches that combine premium shelf appeal with authenticity cues.</p><a class="text-link-bold" href="hologram/holographic-pouches.html">Explore</a></article>
+            <article class="holo-solution-card"><img src="images/hologram/solutions/holo-06-holographic-paper-labels.png" width="1024" height="1024" alt="Holographic Paper Labels sample." loading="lazy" decoding="async" /><h3>Holographic Paper Labels</h3><p>Eye-catching holographic label stock suited for high-volume branded authentication programs.</p><a class="text-link-bold" href="hologram/hologram-paper-label.html">Explore</a></article>
+            <article class="holo-solution-card"><img src="images/hologram/solutions/holo-07-holographic-security-tapes.png" width="1024" height="1024" alt="Holographic Security Tapes sample." loading="lazy" decoding="async" /><h3>Holographic Security Tapes</h3><p>Tamper-evident sealing tapes for cartons and shipments requiring instant breach visibility.</p><a class="text-link-bold" href="hologram/holographic-security-tapes.html">Explore</a></article>
+            <article class="holo-solution-card"><img src="images/hologram/solutions/holo-08-shrink-sleeves.png" width="1024" height="1024" alt="Hologram Shrink Sleeves sample." loading="lazy" decoding="async" /><h3>Hologram Shrink Sleeves</h3><p>360-degree holographic sleeves that add premium branding and container-level security.</p><a class="text-link-bold" href="hologram/hologram-shrink-sleeves.html">Explore</a></article>
+            <article class="holo-solution-card"><img src="images/hologram/solutions/holo-09-hologram-coupons.png" width="1024" height="1024" alt="Hologram Coupons sample." loading="lazy" decoding="async" /><h3>Hologram Coupons</h3><p>Secure promotional coupons with hologram elements to reduce duplication and misuse.</p><a class="text-link-bold" href="hologram/hologram-coupons.html">Explore</a></article>
+            <article class="holo-solution-card"><img src="images/hologram/solutions/holo-10-id-overlay.png" width="1024" height="1024" alt="ID Overlay Holograms sample." loading="lazy" decoding="async" /><h3>ID Overlay Holograms</h3><p>Transparent overlays for identity cards and credentials to prevent forgery and tampering.</p><a class="text-link-bold" href="hologram/id-overlay-holograms.html">Explore</a></article>
+            <article class="holo-solution-card"><img src="images/hologram/solutions/holo-11-generic-stickers.png" width="1024" height="1024" alt="Generic Hologram Stickers sample." loading="lazy" decoding="async" /><h3>Generic Hologram Stickers</h3><p>Ready-to-use hologram stickers for quick deployment and cost-effective product authentication.</p><a class="text-link-bold" href="hologram/generic-hologram-stickers.html">Explore</a></article>
+          </div>
+        </section>
+
+        <p class="page-actions">
+          <a class="button button-primary" href="contact.html">Request hologram consultation</a>
+          <a class="button button-secondary" href="gallery.html">View packaging gallery</a>
+        </p>
       </div>`,
   },
 ];
@@ -470,15 +701,15 @@ pages.push({
 });
 
 const pouchCatalog = [
-  ["three-side-seal.html", "three-side", "3 Side Seal Pouch", "Flat packs with three sealed sides—ideal for sachets and single serves."],
-  ["centre-seal.html", "center-seal", "Centre Seal Pouch", "Strong back seal for a clean front face and efficient filling."],
-  ["stand-up.html", "stand-up", "Stand-Up Pouch", "Shelf-standing format with optional zipper and window."],
-  ["shaped-pouch.html", "shaped", "Shaped Pouch", "Custom silhouettes for campaigns and premium positioning."],
-  ["four-side-seal.html", "four-side", "4 Side Seal Pouch", "Uniform seals on all sides for portion packs and vacuum options."],
-  ["side-gusset.html", "gusset", "Side Gusset Pouch", "Extra volume for coffee, ingredients, and larger fills."],
-  ["spout.html", "spout", "Spout Pouch", "Controlled dispensing for liquids and refills."],
-  ["retort.html", "retort", "Retort Pouch", "Thermal processing compatibility for shelf-stable meals."],
-  ["flat-bottom.html", "flat-bottom", "Flat Bottom Pouch", "Five-panel presence for premium snacks and specialty foods."],
+  ["three-side-seal.html", "../images/pouches/three-side-seal/hero-three-side-seal-uniflex.png", 723, 1024, "3 Side Seal Pouch", "Flat packs with three sealed sides—ideal for sachets and single serves."],
+  ["centre-seal.html", "../images/pouches/centre-seal/hero.png", 1131, 1600, "Centre Seal Pouch", "Strong back seal for a clean front face and efficient filling."],
+  ["stand-up.html", "../images/pouches/stand-up/stand-up-hero.png", 500, 500, "Stand-Up Pouch", "Shelf-standing format with optional zipper and window."],
+  ["shaped-pouch.html", "../images/pouches/shaped-pouch/hero.png", 1131, 1600, "Shaped Pouch", "Custom silhouettes for campaigns and premium positioning."],
+  ["four-side-seal.html", "../images/pouches/four-side-seal/hero.png", 1131, 1600, "4 Side Seal Pouch", "Uniform seals on all sides for portion packs and vacuum options."],
+  ["side-gusset.html", "../images/pouches/side-gusset/hero.png", 1131, 1600, "Side Gusset Pouch", "Extra volume for coffee, ingredients, and larger fills."],
+  ["spout.html", "../images/pouches/spout/hero.png", 1131, 1600, "Spout Pouch", "Controlled dispensing for liquids and refills."],
+  ["retort.html", "../images/pouches/retort/hero.png", 1131, 1600, "Retort Pouch", "Thermal processing compatibility for shelf-stable meals."],
+  ["flat-bottom.html", "../images/pouches/flat-bottom/hero.png", 1131, 1600, "Flat Bottom Pouch", "Five-panel presence for premium snacks and specialty foods."],
 ];
 
 const pouchesIndexMain = `      <div class="page-hero page-hero--compact">
@@ -490,8 +721,8 @@ const pouchesIndexMain = `      <div class="page-hero page-hero--compact">
         <div class="pouch-catalog">
 ${pouchCatalog
   .map(
-    ([href, shape, title, desc]) => `          <a href="${href}">
-            <span class="pouch-shape ${shape}" style="width:64px;height:76px" aria-hidden="true"></span>
+    ([href, image, width, height, title, desc]) => `          <a href="${href}">
+            <img class="pouch-catalog__thumb" src="${image}" width="${width}" height="${height}" alt="${title}" loading="lazy" decoding="async" />
             <h2>${title}</h2>
             <p>${desc}</p>
           </a>`,
