@@ -299,6 +299,7 @@ function page(p) {
     <meta name="description" content="${desc}" />
     <link rel="canonical" href="https://ops-engine.github.io/uniflexpackagingsolutions/pouches/${p.slug}.html" />
     <meta name="theme-color" content="#1e3a8a" />
+    <link rel="icon" type="image/png" href="../images/brand/favicon.png" />
     <link rel="stylesheet" href="../styles.css?v=header-tabs-active-20260511" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" />
   </head>
@@ -475,7 +476,7 @@ ${footerPouches}
         <ul>
           <li><a href="../contact.html">Enquire now</a></li>
           <li><a href="tel:+919686960545">+91 96869 60545</a></li>
-          <li><a href="mailto:contact-us@uniflexpackagingsolutions.com">contact-us@uniflexpackagingsolutions.com</a></li>
+          <li><a href="mailto:uniflexpackagingsollutions@gmail.com">uniflexpackagingsollutions@gmail.com</a></li>
         </ul>
       </div>
       <div class="footer-col">

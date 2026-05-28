@@ -14,6 +14,7 @@ const headerRoot = `<!doctype html>
     <meta name="description" content="{{DESC}}" />
     <link rel="canonical" href="{{CANONICAL}}" />
     <meta name="theme-color" content="#1e3a8a" />
+    <link rel="icon" type="image/png" href="{{HOME}}images/brand/favicon.png" />
     <link rel="stylesheet" href="{{CSS}}" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -129,7 +130,7 @@ const footerRoot = `<footer class="site-footer site-footer--columns">
         <ul>
           <li><a href="{{HOME}}contact.html">Enquire now</a></li>
           <li><a href="tel:+919686960545">+91 96869 60545</a></li>
-          <li><a href="mailto:contact-us@uniflexpackagingsolutions.com">contact-us@uniflexpackagingsolutions.com</a></li>
+          <li><a href="mailto:uniflexpackagingsollutions@gmail.com">uniflexpackagingsollutions@gmail.com</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -203,9 +204,9 @@ const contactForm = `      <section class="section contact-page">
                 </a>
               </li>
               <li>
-                <a class="contact-page__detail" href="mailto:contact-us@uniflexpackagingsolutions.com">
+                <a class="contact-page__detail" href="mailto:uniflexpackagingsollutions@gmail.com">
                   <span class="contact-page__icon" aria-hidden="true"><i class="ri-mail-fill"></i></span>
-                  <span>contact-us@uniflexpackagingsolutions.com</span>
+                  <span>uniflexpackagingsollutions@gmail.com</span>
                 </a>
               </li>
             </ul>
@@ -237,7 +238,7 @@ const contactForm = `      <section class="section contact-page">
             </div>
           </div>
           <div class="contact-page__form-wrap">
-            <form class="contact-page__form quote-form" name="packaging-inquiry" action="mailto:contact-us@uniflexpackagingsolutions.com" method="post" enctype="text/plain">
+            <form class="contact-page__form quote-form" name="packaging-inquiry" action="mailto:uniflexpackagingsollutions@gmail.com" method="post" enctype="text/plain">
               <div class="contact-page__form-brand">
                 <img src="images/brand/uniflex-logo-clean-4k.png" width="3840" height="1207" alt="Uniflex Packaging Solutions" loading="lazy" decoding="async" />
               </div>
@@ -288,21 +289,36 @@ const pages = [
               Uniflex partners with growing consumer brands across food, beverage, personal care, and adjacent categories.
               Our focus is dependable barrier performance, sharp artwork reproduction, and packaging formats that suit your scale—whether you are validating a pilot SKU or scaling bulk production.
             </p>
-            <h2 class="eyebrow section-label">Find us</h2>
-            <ul class="location-list">
-              <li>
-                <a class="location-link" href="https://maps.app.goo.gl/bsWXXG1VSUHhUwGw6" target="_blank" rel="noopener noreferrer">
-                  <i class="ri-map-pin-2-fill" aria-hidden="true"></i>
-                  <span>Survey No. 352, Ground Floor, Ramakuppam Main Road, Kyasamballi Village, KGF Taluk, Kolar, Karnataka 563121</span>
-                </a>
-              </li>
-              <li>
-                <a class="location-link" href="https://maps.app.goo.gl/u8Ys68yC1oGph1A27" target="_blank" rel="noopener noreferrer">
-                  <i class="ri-map-pin-2-fill" aria-hidden="true"></i>
-                  <span>Survey No. 61/1, Byappanahalli, Bidarahalli Hobli, Virgonagar Post, Bengaluru, Bengaluru Urban, Karnataka 560049</span>
-                </a>
-              </li>
-            </ul>
+            <section class="about-leadership" aria-label="Leadership and contacts">
+              <h2 class="eyebrow section-label about-leadership__heading">
+                <span class="about-leadership__heading-icon" aria-hidden="true"><i class="ri-shield-star-line"></i></span>
+                <span>Leadership</span>
+              </h2>
+              <ul class="about-leadership__list">
+                <li>
+                  <span class="about-leadership__icon about-leadership__icon--owner" aria-hidden="true"><i class="ri-award-line"></i></span>
+                  <div>
+                    <p class="about-leadership__name">Uday Reddy</p>
+                    <p class="about-leadership__meta">Designation: Proprietor</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="about-leadership__icon about-leadership__icon--gm" aria-hidden="true"><i class="ri-briefcase-4-line"></i></span>
+                  <div>
+                    <p class="about-leadership__name">Gopi N</p>
+                    <p class="about-leadership__meta">Designation: GM</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="about-leadership__icon about-leadership__icon--email" aria-hidden="true"><i class="ri-mail-open-line"></i></span>
+                  <a href="mailto:uniflexpackagingsollutions@gmail.com">uniflexpackagingsollutions@gmail.com</a>
+                </li>
+                <li>
+                  <span class="about-leadership__icon about-leadership__icon--phone" aria-hidden="true"><i class="ri-phone-fill"></i></span>
+                  <a href="tel:+919686960545">+91 96869 60545</a>
+                </li>
+              </ul>
+            </section>
             <h2 id="approach" class="eyebrow section-label about-approach-title">How we work</h2>
             <p>
               We start with your product, distribution environment, and filling equipment. From there we shortlist laminate structures,
@@ -315,20 +331,36 @@ const pages = [
           </div>
           <section class="find-us find-us--panel" aria-labelledby="find-us-title">
             <h2 id="find-us-title" class="eyebrow section-label">Find us</h2>
-            <div class="find-us__map find-us__map--single">
-              <div
-                class="find-us__leaflet"
-                data-find-us-map
-                data-map-a-lat="12.955057"
-                data-map-a-lng="78.345284"
-                data-map-a-title="Kolar location"
-                data-map-a-address="Survey No. 352, Ground Floor, Ramakuppam Main Road, Kyasamballi Village, KGF Taluk, Kolar, Karnataka 563121"
-                data-map-b-lat="13.072494"
-                data-map-b-lng="77.721146"
-                data-map-b-title="Bengaluru location"
-                data-map-b-address="Survey No. 61/1, Byappanahalli, Bidarahalli Hobli, Virgonagar Post, Bengaluru, Bengaluru Urban, Karnataka 560049"
-                aria-label="Map with Kolar and Bengaluru pinned locations"
-              ></div>
+            <div class="find-us--right">
+              <ul class="location-list">
+                <li>
+                  <a class="location-link" href="https://maps.app.goo.gl/bsWXXG1VSUHhUwGw6" target="_blank" rel="noopener noreferrer">
+                    <i class="ri-map-pin-2-fill" aria-hidden="true"></i>
+                    <span>Survey No. 352, Ground Floor, Ramakuppam Main Road, Kyasamballi Village, KGF Taluk, Kolar, Karnataka 563121</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="location-link" href="https://maps.app.goo.gl/u8Ys68yC1oGph1A27" target="_blank" rel="noopener noreferrer">
+                    <i class="ri-map-pin-2-fill" aria-hidden="true"></i>
+                    <span>Survey No. 61/1, Byappanahalli, Bidarahalli Hobli, Virgonagar Post, Bengaluru, Bengaluru Urban, Karnataka 560049</span>
+                  </a>
+                </li>
+              </ul>
+              <div class="find-us__map find-us__map--single">
+                <div
+                  class="find-us__leaflet"
+                  data-find-us-map
+                  data-map-a-lat="12.955057"
+                  data-map-a-lng="78.345284"
+                  data-map-a-title="Kolar location"
+                  data-map-a-address="Survey No. 352, Ground Floor, Ramakuppam Main Road, Kyasamballi Village, KGF Taluk, Kolar, Karnataka 563121"
+                  data-map-b-lat="13.072494"
+                  data-map-b-lng="77.721146"
+                  data-map-b-title="Bengaluru location"
+                  data-map-b-address="Survey No. 61/1, Byappanahalli, Bidarahalli Hobli, Virgonagar Post, Bengaluru, Bengaluru Urban, Karnataka 560049"
+                  aria-label="Map with Kolar and Bengaluru pinned locations"
+                ></div>
+              </div>
             </div>
           </section>
         </div>
@@ -559,7 +591,7 @@ const pages = [
       </div>
       <div class="layout-page prose">
         <p>This static website may collect information you voluntarily provide through email links or forms (processed by your mail client). We use it only to respond to enquiries about packaging services.</p>
-        <p>We do not sell personal data. For questions, contact <a href="mailto:contact-us@uniflexpackagingsolutions.com">contact-us@uniflexpackagingsolutions.com</a>.</p>
+        <p>We do not sell personal data. For questions, contact <a href="mailto:uniflexpackagingsollutions@gmail.com">uniflexpackagingsollutions@gmail.com</a>.</p>
       </div>`,
   },
   {
