@@ -361,3 +361,306 @@ if (newsletterForm) {
     }
   });
 }
+
+const floatingContacts = [
+  {
+    href: "https://wa.me/919686960545?text=Hello%20Uniflex%20Packaging%20Solutions%2C%20I%20need%20packaging%20details.",
+    label: "WhatsApp",
+    className: "contact-float__btn--whatsapp",
+    iconClass: "ri-whatsapp-line",
+  },
+  {
+    href: "tel:+919686960545",
+    label: "Call us",
+    className: "contact-float__btn--phone",
+    iconClass: "ri-phone-fill",
+  },
+  {
+    href: "mailto:uniflexpackagingsollutions@gmail.com",
+    label: "Email us",
+    className: "contact-float__btn--email",
+    iconClass: "ri-mail-send-line",
+  },
+];
+
+(() => {
+  if (window.__uniflexContactFloatReady) return;
+
+  const storageKey = "uniflex-contact-float-pos";
+  const hiddenStorageKey = "uniflex-contact-float-hidden";
+  const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+  const contactFloat = document.createElement("div");
+  contactFloat.className = "contact-float";
+  contactFloat.setAttribute("aria-label", "Quick contact widget");
+
+  const dock = document.createElement("div");
+  dock.className = "contact-float__dock";
+
+  const launcher = document.createElement("button");
+  launcher.type = "button";
+  launcher.className = "contact-float__launcher";
+  launcher.setAttribute("aria-expanded", "false");
+  launcher.setAttribute("aria-controls", "contact-float-panel");
+  launcher.setAttribute("aria-label", "Open contact options");
+  launcher.innerHTML = '<i class="ri-customer-service-2-line" aria-hidden="true"></i>';
+
+  const hideWidget = document.createElement("button");
+  hideWidget.type = "button";
+  hideWidget.className = "contact-float__hide-widget";
+  hideWidget.setAttribute("aria-label", "Hide contact widget");
+  hideWidget.innerHTML = '<i class="ri-subtract-line" aria-hidden="true"></i>';
+
+  const restoreBtn = document.createElement("button");
+  restoreBtn.type = "button";
+  restoreBtn.className = "contact-float__restore";
+  restoreBtn.setAttribute("aria-label", "Show contact widget");
+  restoreBtn.innerHTML = '<i class="ri-customer-service-2-line" aria-hidden="true"></i>';
+
+  const panel = document.createElement("div");
+  panel.id = "contact-float-panel";
+  panel.className = "contact-float__panel";
+  panel.setAttribute("aria-hidden", "true");
+
+  const collapse = document.createElement("button");
+  collapse.type = "button";
+  collapse.className = "contact-float__collapse";
+  collapse.setAttribute("aria-label", "Close contact options");
+  collapse.innerHTML = '<i class="ri-close-line" aria-hidden="true"></i>';
+
+  const actionWrap = document.createElement("div");
+  actionWrap.className = "contact-float__actions";
+
+  const hidePanelBtn = document.createElement("button");
+  hidePanelBtn.type = "button";
+  hidePanelBtn.className = "contact-float__hide-panel";
+  hidePanelBtn.textContent = "Hide widget";
+
+  floatingContacts.forEach((item) => {
+    const link = document.createElement("a");
+    link.href = item.href;
+    link.className = `contact-float__btn ${item.className}`;
+    link.setAttribute("aria-label", item.label);
+    if (item.href.startsWith("http")) {
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+    }
+    const icon = document.createElement("i");
+    icon.className = item.iconClass;
+    icon.setAttribute("aria-hidden", "true");
+    const text = document.createElement("span");
+    text.textContent = item.label;
+    link.append(icon, text);
+    actionWrap.append(link);
+  });
+
+  dock.append(launcher, hideWidget);
+  panel.append(collapse, actionWrap, hidePanelBtn);
+  contactFloat.append(panel, dock, restoreBtn);
+  document.body.append(contactFloat);
+
+  const drag = {
+    active: false,
+    didMove: false,
+    startY: 0,
+    offsetY: 0,
+    pointerId: null,
+  };
+
+  const applyVerticalPosition = (y) => {
+    const maxY = window.innerHeight - contactFloat.offsetHeight - 8;
+    const nextY = clamp(y, 8, maxY);
+    contactFloat.style.top = `${nextY}px`;
+    contactFloat.style.bottom = "auto";
+    contactFloat.style.left = "auto";
+    contactFloat.classList.add("is-positioned");
+  };
+
+  const resetVerticalPosition = () => {
+    contactFloat.style.top = "";
+    contactFloat.style.bottom = "";
+    contactFloat.style.left = "";
+    contactFloat.classList.remove("is-positioned", "is-dragging");
+  };
+
+  const endDrag = () => {
+    drag.active = false;
+    drag.pointerId = null;
+    contactFloat.classList.remove("is-dragging");
+    launcher.style.touchAction = "";
+  };
+
+  const setExpanded = (expanded) => {
+    launcher.setAttribute("aria-expanded", String(expanded));
+    launcher.setAttribute("aria-label", expanded ? "Close contact options" : "Open contact options");
+    panel.setAttribute("aria-hidden", String(!expanded));
+    contactFloat.classList.toggle("is-open", expanded);
+  };
+
+  const setWidgetHidden = (hidden) => {
+    if (hidden) {
+      contactFloat.classList.add("is-widget-hidden");
+      setExpanded(false);
+      if (drag.active) endDrag();
+    } else {
+      contactFloat.classList.remove("is-widget-hidden");
+    }
+    try {
+      localStorage.setItem(hiddenStorageKey, hidden ? "1" : "0");
+    } catch (_error) {
+      // ignore localStorage failures
+    }
+  };
+
+  const hideContactWidget = () => {
+    setWidgetHidden(true);
+  };
+
+  const ensureVerticalAnchor = () => {
+    if (contactFloat.classList.contains("is-positioned")) return;
+    applyVerticalPosition(contactFloat.getBoundingClientRect().top);
+  };
+
+  const onPointerMove = (event) => {
+    if (!drag.active || event.pointerId !== drag.pointerId) return;
+
+    if (Math.abs(event.clientY - drag.startY) > 4) {
+      drag.didMove = true;
+      contactFloat.classList.add("is-dragging");
+    }
+
+    if (!drag.didMove) return;
+    event.preventDefault();
+    applyVerticalPosition(event.clientY - drag.offsetY);
+  };
+
+  const onPointerEnd = (event) => {
+    if (event.pointerId !== drag.pointerId) return;
+
+    if (drag.didMove) {
+      try {
+        const { top } = contactFloat.getBoundingClientRect();
+        localStorage.setItem(storageKey, JSON.stringify({ y: top }));
+      } catch (_error) {
+        // ignore localStorage failures
+      }
+    }
+
+    endDrag();
+    window.removeEventListener("pointermove", onPointerMove);
+    window.removeEventListener("pointerup", onPointerEnd);
+    window.removeEventListener("pointercancel", onPointerEnd);
+  };
+
+  const startDrag = (event) => {
+    if (contactFloat.classList.contains("is-widget-hidden")) return;
+    if (event.pointerType === "mouse" && event.button !== 0) return;
+
+    ensureVerticalAnchor();
+    const rect = contactFloat.getBoundingClientRect();
+    drag.active = true;
+    drag.didMove = false;
+    drag.startY = event.clientY;
+    drag.offsetY = event.clientY - rect.top;
+    drag.pointerId = event.pointerId;
+    launcher.style.touchAction = "none";
+
+    window.addEventListener("pointermove", onPointerMove);
+    window.addEventListener("pointerup", onPointerEnd);
+    window.addEventListener("pointercancel", onPointerEnd);
+  };
+
+  const initPosition = () => {
+    try {
+      const saved = localStorage.getItem(storageKey);
+      if (!saved) return;
+      const parsed = JSON.parse(saved);
+      const y = Number.isFinite(parsed?.y) ? parsed.y : parsed?.top;
+      if (!Number.isFinite(y)) return;
+      applyVerticalPosition(y);
+    } catch (_error) {
+      // ignore persisted-position errors
+    }
+  };
+
+  const initHidden = () => {
+    try {
+      if (localStorage.getItem(hiddenStorageKey) === "1") {
+        setWidgetHidden(true);
+      }
+    } catch (_error) {
+      // ignore localStorage failures
+    }
+  };
+
+  launcher.addEventListener("pointerdown", (event) => {
+    startDrag(event);
+  });
+
+  launcher.addEventListener("click", (event) => {
+    if (drag.didMove) {
+      drag.didMove = false;
+      return;
+    }
+    event.stopPropagation();
+    const next = launcher.getAttribute("aria-expanded") !== "true";
+    setExpanded(next);
+  });
+
+  hideWidget.addEventListener("pointerdown", (event) => {
+    event.stopPropagation();
+  });
+
+  hideWidget.addEventListener("pointerup", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    hideContactWidget();
+  });
+
+  hideWidget.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    hideContactWidget();
+  });
+
+  hidePanelBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    hideContactWidget();
+  });
+
+  restoreBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    setWidgetHidden(false);
+  });
+
+  collapse.addEventListener("click", (event) => {
+    event.stopPropagation();
+    setExpanded(false);
+  });
+
+  document.addEventListener("click", (event) => {
+    if (launcher.getAttribute("aria-expanded") !== "true") return;
+    if (event.target instanceof Node && contactFloat.contains(event.target)) return;
+    setExpanded(false);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && launcher.getAttribute("aria-expanded") === "true") {
+      setExpanded(false);
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (!contactFloat.classList.contains("is-positioned")) return;
+    applyVerticalPosition(contactFloat.getBoundingClientRect().top);
+  });
+
+  requestAnimationFrame(() => {
+    initPosition();
+    initHidden();
+  });
+
+  window.__uniflexContactFloatReady = true;
+})();

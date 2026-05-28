@@ -4,7 +4,9 @@
   "description": "Static website and server for Uniflex Packaging Solutions.",
   "private": true,
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "generate:sitemap": "node scripts/generate-sitemap.mjs",
+    "generate:pages": "node scripts/generate-static-pages.mjs && node scripts/generate-pouch-pages.mjs && node scripts/generate-hologram-pages.mjs && node scripts/generate-sitemap.mjs"
   },
   "engines": {
     "node": ">=18"

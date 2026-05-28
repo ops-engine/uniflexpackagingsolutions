@@ -1,6 +1,6 @@
 # Uniflex Packaging Solutions
 
-Static website for [Uniflex Packaging Solutions](https://ops-engine.github.io/uniflexpackagingsolutions/).
+Static website for [Uniflex Packaging Solutions](https://www.uniflexpackagingsolutions.com/).
 
 ## Files
 
@@ -53,7 +53,22 @@ The workflow publishes only these public files:
 
 In the repository settings, set **Pages > Build and deployment > Source** to
 **GitHub Actions**. After the workflow runs successfully, the site will be
-available at `https://ops-engine.github.io/uniflexpackagingsolutions/`.
+available at **https://www.uniflexpackagingsolutions.com** (custom domain via `CNAME`).
 
-To switch to the custom domain later, publish `CNAME` in the Pages artifact and
-point DNS for `uniflexpackagingsolutions.com` to GitHub Pages.
+### Site URL in generators
+
+Production URL is defined in `scripts/site-config.mjs`. Regenerate metadata with:
+
+```bash
+npm run generate:sitemap
+```
+
+To regenerate all HTML from templates (overwrites generated pages):
+
+```bash
+npm run generate:pages
+```
+
+### DNS (custom domain)
+
+Point `www.uniflexpackagingsolutions.com` to GitHub Pages (CNAME to your `*.github.io` host or A records for Pages). The repo includes `CNAME` with `www.uniflexpackagingsolutions.com`.

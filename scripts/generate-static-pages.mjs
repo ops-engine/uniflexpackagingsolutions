@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { SITE_URL } from "./site-config.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
@@ -93,6 +94,18 @@ const headerRoot = `<!doctype html>
     </div>`;
 
 const footerRoot = `<footer class="site-footer site-footer--columns">
+      <section class="newsletter footer-newsletter" aria-labelledby="footer-newsletter-title">
+        <div>
+          <p class="eyebrow">Stay updated</p>
+          <h2 id="footer-newsletter-title">Subscribe to packaging updates</h2>
+          <p>Receive product updates, packaging ideas, and Uniflex news.</p>
+        </div>
+        <form class="newsletter-form">
+          <label class="sr-only" for="footer-newsletter-email">Email address</label>
+          <input id="footer-newsletter-email" type="email" placeholder="Enter your email" required />
+          <button class="button button-primary" type="submit">Subscribe</button>
+        </form>
+      </section>
       <div>
         <a class="brand footer-brand" href="{{HOME}}index.html" aria-label="Uniflex Packaging Solutions home">
           <span class="brand-mark">
@@ -177,7 +190,7 @@ ${main}
 ${foot}`;
 }
 
-const base = "https://ops-engine.github.io/uniflexpackagingsolutions";
+const base = SITE_URL;
 
 const contactForm = `      <section class="section contact-page">
         <div class="layout-page contact-page__grid">

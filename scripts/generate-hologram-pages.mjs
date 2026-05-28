@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { SITE_URL } from "./site-config.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
@@ -166,7 +167,7 @@ function page(item) {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>${item.title} | Uniflex Packaging Solutions</title>
     <meta name="description" content="${desc}" />
-    <link rel="canonical" href="https://ops-engine.github.io/uniflexpackagingsolutions/hologram/${item.slug}.html" />
+    <link rel="canonical" href="${SITE_URL}/hologram/${item.slug}.html" />
     <meta name="theme-color" content="#1e3a8a" />
     <link rel="icon" type="image/png" href="../images/brand/favicon.png" />
     <link rel="stylesheet" href="../styles.css?v=header-tabs-active-20260511" />
@@ -278,6 +279,18 @@ ${applicationList}
     </main>
 
     <footer class="site-footer site-footer--columns">
+      <section class="newsletter footer-newsletter" aria-labelledby="footer-newsletter-title">
+        <div>
+          <p class="eyebrow">Stay updated</p>
+          <h2 id="footer-newsletter-title">Subscribe to packaging updates</h2>
+          <p>Receive product updates, packaging ideas, and Uniflex news.</p>
+        </div>
+        <form class="newsletter-form">
+          <label class="sr-only" for="footer-newsletter-email">Email address</label>
+          <input id="footer-newsletter-email" type="email" placeholder="Enter your email" required />
+          <button class="button button-primary" type="submit">Subscribe</button>
+        </form>
+      </section>
       <div>
         <a class="brand footer-brand" href="../index.html" aria-label="Uniflex Packaging Solutions home">
           <span class="brand-mark">
