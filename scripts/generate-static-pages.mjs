@@ -134,7 +134,8 @@ const footerRoot = `<footer class="site-footer site-footer--columns">
         <ul>
           <li><a href="{{HOME}}about.html">About us</a></li>
           <li><a href="{{HOME}}gallery.html">Gallery</a></li>
-          <li><a href="{{HOME}}industries.html"><i class="ri-apps-2-line nav-industry-icon" aria-hidden="true"></i><span>Industries</span></a></li>
+          <li><a href="{{HOME}}industries.html">Industries</a></li>
+          <li><a href="{{HOME}}hologram-sticker.html">Hologram security stickers</a></li>
           <li><a href="{{HOME}}privacy.html">Privacy policy</a></li>
         </ul>
       </div>
