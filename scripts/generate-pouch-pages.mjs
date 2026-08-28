@@ -2,7 +2,6 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { SITE_URL } from "./site-config.mjs";
-import { hologramFooterColumn } from "./footer-data.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
@@ -350,22 +349,6 @@ ${navPouches}
               <a href="index.html">View all formats</a>
             </div>
           </div>
-          <div class="nav-group">
-            <a class="nav-link nav-link--has-sub" href="../hologram-sticker.html">Hologram Security Stickers</a>
-            <div class="nav-panel nav-panel--wide" role="region" aria-label="Hologram sticker formats">
-              <a href="../hologram/hologram-hot-stamping-foil.html">Hologram Hot Stamping Foil</a>
-              <a href="../hologram/qr-code-hologram-stickers.html">QR Code Hologram Stickers</a>
-              <a href="../hologram/customized-text-hologram.html">Customized Text Hologram</a>
-              <a href="../hologram/laser-numbered-holograms.html">Laser Numbered Holograms</a>
-              <a href="../hologram/holographic-pouches.html">Holographic Pouches</a>
-              <a href="../hologram/hologram-paper-label.html">Holographic Paper Labels</a>
-              <a href="../hologram/holographic-security-tapes.html">Holographic Security Tapes</a>
-              <a href="../hologram/hologram-shrink-sleeves.html">Hologram Shrink Sleeves</a>
-              <a href="../hologram/hologram-coupons.html">Hologram Coupons</a>
-              <a href="../hologram/id-overlay-holograms.html">ID Overlay Holograms</a>
-              <a href="../hologram/generic-hologram-stickers.html">Generic Hologram Stickers</a>
-            </div>
-          </div>
           <a class="nav-link" href="../gallery.html">Gallery</a>
           <a class="nav-link" href="../contact.html">Contact</a>
         </nav>
@@ -476,7 +459,6 @@ ${footerPouches}
           <li><a href="index.html">All formats</a></li>
         </ul>
       </div>
-${hologramFooterColumn("../")}
       <div class="footer-col">
         <h3>Company</h3>
         <ul>

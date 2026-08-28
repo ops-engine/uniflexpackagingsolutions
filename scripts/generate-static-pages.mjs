@@ -2,7 +2,6 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { SITE_URL } from "./site-config.mjs";
-import { hologramFooterColumn } from "./footer-data.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
@@ -67,22 +66,6 @@ const headerRoot = `<!doctype html>
               <a href="{{HOME}}pouches/index.html">View all formats</a>
             </div>
           </div>
-          <div class="nav-group">
-            <a class="nav-link nav-link--has-sub" href="{{HOME}}hologram-sticker.html">Hologram Security Stickers</a>
-            <div class="nav-panel nav-panel--wide" role="region" aria-label="Hologram sticker formats">
-              <a href="{{HOME}}hologram/hologram-hot-stamping-foil.html">Hologram Hot Stamping Foil</a>
-              <a href="{{HOME}}hologram/qr-code-hologram-stickers.html">QR Code Hologram Stickers</a>
-              <a href="{{HOME}}hologram/customized-text-hologram.html">Customized Text Hologram</a>
-              <a href="{{HOME}}hologram/laser-numbered-holograms.html">Laser Numbered Holograms</a>
-              <a href="{{HOME}}hologram/holographic-pouches.html">Holographic Pouches</a>
-              <a href="{{HOME}}hologram/hologram-paper-label.html">Holographic Paper Labels</a>
-              <a href="{{HOME}}hologram/holographic-security-tapes.html">Holographic Security Tapes</a>
-              <a href="{{HOME}}hologram/hologram-shrink-sleeves.html">Hologram Shrink Sleeves</a>
-              <a href="{{HOME}}hologram/hologram-coupons.html">Hologram Coupons</a>
-              <a href="{{HOME}}hologram/id-overlay-holograms.html">ID Overlay Holograms</a>
-              <a href="{{HOME}}hologram/generic-hologram-stickers.html">Generic Hologram Stickers</a>
-            </div>
-          </div>
           <a class="nav-link" href="{{HOME}}gallery.html">Gallery</a>
           <a class="nav-link" href="{{HOME}}contact.html">Contact</a>
         </nav>
@@ -130,7 +113,6 @@ const footerRoot = `<footer class="site-footer site-footer--columns">
           <li><a href="{{HOME}}pouches/index.html">All formats</a></li>
         </ul>
       </div>
-{{HOLOGRAM_FOOTER}}
       <div class="footer-col">
         <h3>Company</h3>
         <ul>
@@ -186,7 +168,6 @@ function wrapShell({ title, desc, canonical, css, home, img, js, main }) {
     HOME: home,
     IMG: img,
     JS: js,
-    HOLOGRAM_FOOTER: hologramFooterColumn(home),
   });
   return `${head}
 
@@ -612,106 +593,6 @@ const pages = [
       <div class="layout-page prose">
         <p>This static website may collect information you voluntarily provide through email links or forms (processed by your mail client). We use it only to respond to enquiries about packaging services.</p>
         <p>We do not sell personal data. For questions, contact <a href="mailto:uniflexpackagingsollutions@gmail.com">uniflexpackagingsollutions@gmail.com</a>.</p>
-      </div>`,
-  },
-  {
-    file: "hologram-sticker.html",
-    title: "Hologram Sticker Solutions | Uniflex Packaging Solutions",
-    desc: "Explore custom hologram sticker and security label formats for anti-counterfeit protection and stronger brand authentication.",
-    canonical: `${base}/hologram-sticker.html`,
-    main: `      <div class="page-hero page-hero--compact">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> · Hologram sticker</nav>
-        <h1>Hologram sticker security solutions</h1>
-        <p class="hero-text">Brand-focused hologram formats designed for anti-counterfeit control, product traceability, and premium shelf impact.</p>
-      </div>
-      <div class="layout-page">
-        <section class="holo-showcase">
-          <div class="holo-showcase__copy">
-            <p class="holo-showcase__eyebrow">Best Hologram Sticker Manufacturer</p>
-            <h2>Stop Counterfeits Before They Damage Your Brand</h2>
-            <p>
-              Advanced hologram security solutions designed to protect products, prevent duplication, and build customer trust.
-              Secure your packaging with next-generation anti-counterfeit technology.
-            </p>
-            <div class="page-actions">
-              <a class="button button-primary" href="contact.html">Enquire now</a>
-              <a class="button button-secondary" href="contact.html">Get instant quote</a>
-            </div>
-          </div>
-          <div class="holo-showcase__visual">
-            <div class="holo-columns" aria-hidden="true">
-              <div class="holo-column holo-column--up">
-                <div class="holo-column__track">
-                  <img src="images/hologram/solutions/holo-01-hot-stamping-foil.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
-                  <img src="images/hologram/solutions/holo-02-qr-code-stickers.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
-                  <img src="images/hologram/solutions/holo-03-customized-text.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
-                  <img src="images/hologram/solutions/holo-01-hot-stamping-foil.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
-                  <img src="images/hologram/solutions/holo-02-qr-code-stickers.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
-                  <img src="images/hologram/solutions/holo-03-customized-text.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
-                </div>
-              </div>
-              <div class="holo-column holo-column--down">
-                <div class="holo-column__track">
-                  <img src="images/hologram/solutions/holo-04-laser-numbered.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
-                  <img src="images/hologram/solutions/holo-05-holographic-pouches.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
-                  <img src="images/hologram/solutions/holo-06-holographic-paper-labels.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
-                  <img src="images/hologram/solutions/holo-04-laser-numbered.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
-                  <img src="images/hologram/solutions/holo-05-holographic-pouches.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
-                  <img src="images/hologram/solutions/holo-06-holographic-paper-labels.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
-                </div>
-              </div>
-              <div class="holo-column holo-column--up">
-                <div class="holo-column__track">
-                  <img src="images/hologram/solutions/holo-07-holographic-security-tapes.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
-                  <img src="images/hologram/solutions/holo-08-shrink-sleeves.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
-                  <img src="images/hologram/solutions/holo-09-hologram-coupons.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
-                  <img src="images/hologram/solutions/holo-07-holographic-security-tapes.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
-                  <img src="images/hologram/solutions/holo-08-shrink-sleeves.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
-                  <img src="images/hologram/solutions/holo-09-hologram-coupons.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
-                </div>
-              </div>
-              <div class="holo-column holo-column--down">
-                <div class="holo-column__track">
-                  <img src="images/hologram/solutions/holo-10-id-overlay.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
-                  <img src="images/hologram/solutions/holo-11-generic-stickers.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
-                  <img src="images/hologram/solutions/holo-01-hot-stamping-foil.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
-                  <img src="images/hologram/solutions/holo-10-id-overlay.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
-                  <img src="images/hologram/solutions/holo-11-generic-stickers.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
-                  <img src="images/hologram/solutions/holo-01-hot-stamping-foil.png" width="1024" height="1024" alt="" loading="lazy" decoding="async" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="holo-section-intro prose">
-          <h2>Custom Security Hologram Solution</h2>
-          <p>
-            We offer a broad portfolio of custom hologram security formats, from tamper-evident labels to
-            cost-optimized authentication stickers. Each solution combines visual impact with anti-counterfeit control
-            to help protect your products, reinforce authenticity, and improve brand trust in the market.
-          </p>
-        </section>
-        <section class="holo-listing" aria-labelledby="holo-listing-title">
-          <h2 id="holo-listing-title">Advanced security solutions</h2>
-          <div class="holo-solution-grid">
-            <article class="holo-solution-card"><img src="images/hologram/solutions/holo-01-hot-stamping-foil.png" width="1024" height="1024" alt="Hologram Hot Stamping Foil sample." loading="lazy" decoding="async" /><h3>Hologram Hot Stamping Foil</h3><p>High-security foil marks applied with heat and pressure for permanent anti-counterfeit branding.</p><a class="text-link-bold" href="hologram/hologram-hot-stamping-foil.html">Explore</a></article>
-            <article class="holo-solution-card"><img src="images/hologram/solutions/holo-02-qr-code-stickers.png" width="1024" height="1024" alt="QR Code Hologram Stickers sample." loading="lazy" decoding="async" /><h3>QR Code Hologram Stickers</h3><p>Smart labels enabling secure scan-and-verify authentication through integrated QR workflows.</p><a class="text-link-bold" href="hologram/qr-code-hologram-stickers.html">Explore</a></article>
-            <article class="holo-solution-card"><img src="images/hologram/solutions/holo-03-customized-text.png" width="1024" height="1024" alt="Customized Text Hologram sample." loading="lazy" decoding="async" /><h3>Customized Text Hologram</h3><p>Personalized hologram labels with custom text and logo identity for stronger brand protection.</p><a class="text-link-bold" href="hologram/customized-text-hologram.html">Explore</a></article>
-            <article class="holo-solution-card"><img src="images/hologram/solutions/holo-04-laser-numbered.png" width="1024" height="1024" alt="Laser Numbered Holograms sample." loading="lazy" decoding="async" /><h3>Laser Numbered Holograms</h3><p>Unique serialized holograms for product tracking, verification, and secure distribution control.</p><a class="text-link-bold" href="hologram/laser-numbered-holograms.html">Explore</a></article>
-            <article class="holo-solution-card"><img src="images/hologram/solutions/holo-05-holographic-pouches.png" width="1024" height="1024" alt="Holographic Pouches sample." loading="lazy" decoding="async" /><h3>Holographic Pouches</h3><p>Flexible holographic pouches that combine premium shelf appeal with authenticity cues.</p><a class="text-link-bold" href="hologram/holographic-pouches.html">Explore</a></article>
-            <article class="holo-solution-card"><img src="images/hologram/solutions/holo-06-holographic-paper-labels.png" width="1024" height="1024" alt="Holographic Paper Labels sample." loading="lazy" decoding="async" /><h3>Holographic Paper Labels</h3><p>Eye-catching holographic label stock suited for high-volume branded authentication programs.</p><a class="text-link-bold" href="hologram/hologram-paper-label.html">Explore</a></article>
-            <article class="holo-solution-card"><img src="images/hologram/solutions/holo-07-holographic-security-tapes.png" width="1024" height="1024" alt="Holographic Security Tapes sample." loading="lazy" decoding="async" /><h3>Holographic Security Tapes</h3><p>Tamper-evident sealing tapes for cartons and shipments requiring instant breach visibility.</p><a class="text-link-bold" href="hologram/holographic-security-tapes.html">Explore</a></article>
-            <article class="holo-solution-card"><img src="images/hologram/solutions/holo-08-shrink-sleeves.png" width="1024" height="1024" alt="Hologram Shrink Sleeves sample." loading="lazy" decoding="async" /><h3>Hologram Shrink Sleeves</h3><p>360-degree holographic sleeves that add premium branding and container-level security.</p><a class="text-link-bold" href="hologram/hologram-shrink-sleeves.html">Explore</a></article>
-            <article class="holo-solution-card"><img src="images/hologram/solutions/holo-09-hologram-coupons.png" width="1024" height="1024" alt="Hologram Coupons sample." loading="lazy" decoding="async" /><h3>Hologram Coupons</h3><p>Secure promotional coupons with hologram elements to reduce duplication and misuse.</p><a class="text-link-bold" href="hologram/hologram-coupons.html">Explore</a></article>
-            <article class="holo-solution-card"><img src="images/hologram/solutions/holo-10-id-overlay.png" width="1024" height="1024" alt="ID Overlay Holograms sample." loading="lazy" decoding="async" /><h3>ID Overlay Holograms</h3><p>Transparent overlays for identity cards and credentials to prevent forgery and tampering.</p><a class="text-link-bold" href="hologram/id-overlay-holograms.html">Explore</a></article>
-            <article class="holo-solution-card"><img src="images/hologram/solutions/holo-11-generic-stickers.png" width="1024" height="1024" alt="Generic Hologram Stickers sample." loading="lazy" decoding="async" /><h3>Generic Hologram Stickers</h3><p>Ready-to-use hologram stickers for quick deployment and cost-effective product authentication.</p><a class="text-link-bold" href="hologram/generic-hologram-stickers.html">Explore</a></article>
-          </div>
-        </section>
-
-        <p class="page-actions">
-          <a class="button button-primary" href="contact.html">Request hologram consultation</a>
-          <a class="button button-secondary" href="gallery.html">View packaging gallery</a>
-        </p>
       </div>`,
   },
 ];

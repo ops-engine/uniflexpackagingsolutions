@@ -3,7 +3,6 @@ const siteNav = document.querySelector(".site-nav");
 const year = document.querySelector("#year");
 const newsletterForm = document.querySelector(".newsletter-form");
 const slider = document.querySelector("[data-slider]");
-const holoSlider = document.querySelector("[data-holo-slider]");
 
 if (year) {
   year.textContent = new Date().getFullYear();
@@ -45,8 +44,6 @@ if (siteNav) {
 
   if (currentPath.includes("/pouches/")) {
     setCurrentGroupByHref("pouches/index.html");
-  } else if (currentFile === "hologram-sticker.html" || currentPath.includes("/hologram/")) {
-    setCurrentGroupByHref("hologram-sticker.html");
   } else if (currentFile === "about.html") {
     setCurrentGroupByHref("about.html");
   } else if (currentFile === "industries.html") {
@@ -210,103 +207,6 @@ if (slider) {
     start();
   });
 
-  render(0);
-  start();
-}
-
-if (holoSlider) {
-  const track = holoSlider.querySelector("[data-holo-track]");
-  const dotsWrap = holoSlider.querySelector("[data-holo-dots]");
-  const prevButton = holoSlider.querySelector("[data-holo-prev]");
-  const nextButton = holoSlider.querySelector("[data-holo-next]");
-  const slides = track ? Array.from(track.querySelectorAll(".holo-slider__slide")) : [];
-  let index = 0;
-  let timer = null;
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  const buildDots = () => {
-    if (!(dotsWrap instanceof HTMLDivElement)) return;
-    dotsWrap.innerHTML = "";
-    slides.forEach((_, i) => {
-      const dot = document.createElement("button");
-      dot.type = "button";
-      dot.className = "holo-slider__dot";
-      dot.setAttribute("aria-label", `Go to hologram slide ${i + 1}`);
-      dot.addEventListener("click", () => {
-        render(i);
-        stop();
-        start();
-      });
-      dotsWrap.append(dot);
-    });
-  };
-
-  const render = (nextIndex) => {
-    if (!(track instanceof HTMLDivElement)) return;
-    if (!slides.length) return;
-    index = (nextIndex + slides.length) % slides.length;
-    track.style.transform = `translateX(-${index * 100}%)`;
-    slides.forEach((slide, i) => {
-      slide.classList.toggle("is-active", i === index);
-      slide.setAttribute("aria-hidden", String(i !== index));
-    });
-
-    if (dotsWrap instanceof HTMLDivElement) {
-      const dots = Array.from(dotsWrap.querySelectorAll(".holo-slider__dot"));
-      dots.forEach((dot, i) => {
-        dot.classList.toggle("is-active", i === index);
-        dot.setAttribute("aria-current", String(i === index));
-      });
-    }
-  };
-
-  const start = () => {
-    if (timer || slides.length < 2) return;
-    timer = window.setInterval(() => render(index + 1), 3600);
-  };
-
-  const stop = () => {
-    if (!timer) return;
-    window.clearInterval(timer);
-    timer = null;
-  };
-
-  prevButton?.addEventListener("click", () => {
-    render(index - 1);
-    stop();
-    start();
-  });
-
-  nextButton?.addEventListener("click", () => {
-    render(index + 1);
-    stop();
-    start();
-  });
-
-  holoSlider.addEventListener("mouseenter", stop);
-  holoSlider.addEventListener("mouseleave", start);
-  holoSlider.addEventListener("focusin", stop);
-  holoSlider.addEventListener("focusout", start);
-
-  holoSlider.addEventListener("touchstart", (event) => {
-    touchStartX = event.changedTouches[0]?.clientX ?? 0;
-  });
-
-  holoSlider.addEventListener("touchend", (event) => {
-    touchEndX = event.changedTouches[0]?.clientX ?? 0;
-    const delta = touchEndX - touchStartX;
-    if (Math.abs(delta) < 45) return;
-    if (delta > 0) {
-      render(index - 1);
-    } else {
-      render(index + 1);
-    }
-    stop();
-    start();
-  });
-
-  buildDots();
   render(0);
   start();
 }
