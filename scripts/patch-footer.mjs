@@ -1,7 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { hologramFooterColumn } from "./footer-data.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
@@ -18,8 +17,6 @@ function collectHtmlFiles(dir, files = []) {
   return files;
 }
 
-const companyBlock = /      <div class="footer-col">\n        <h3>Company<\/h3>/;
-
 let updated = 0;
 
 for (const file of collectHtmlFiles(root)) {
@@ -29,13 +26,6 @@ for (const file of collectHtmlFiles(root)) {
   html = html.replace(industriesWithIcon, (_match, prefix = "") => {
     return `<li><a href="${prefix || ""}industries.html">Industries</a></li>`;
   });
-
-  if (!html.includes("<h3>Hologram stickers</h3>") && companyBlock.test(html)) {
-    const rel = path.relative(root, file);
-    const home = rel.includes(path.sep) ? "../" : "";
-    const column = hologramFooterColumn(home);
-    html = html.replace(companyBlock, `${column}\n      <div class="footer-col">\n        <h3>Company</h3>`);
-  }
 
   if (html !== original) {
     fs.writeFileSync(file, html, "utf8");
